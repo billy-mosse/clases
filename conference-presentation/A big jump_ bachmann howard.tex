@@ -1,0 +1,383 @@
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+\documentclass{beamer}
+
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+\usepackage{braket}
+\usepackage{amsmath}
+\usepackage[makeroom]{cancel}
+
+
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+   \node[shape=circle,color=red,draw,inner sep=1pt] (char) {#1};}}
+
+
+\title{A big J$\Omega$\text{mp in the Ordinals }}
+
+
+\author{Pedro Rocha, Guillermo Mosse, Juan Pablo Otero and Mirko Engler}
+
+\subject{Theoretical Computer Science}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}{Building things from above}
+	\begin{itemize}
+		\item<1-> Cantor Normal Form, Veblen Hierarchy 
+		\item<2-> Bachmann-Howard ordinal: \textbf{KP}, \textbf{CZF}, \textbf{MLW}
+		\item<3-> \textbf{Building from above}
+			\begin{itemize}
+				\item<4-> \textcolor{red}{BIG} ordinal 
+				\item<5-> do a collapsing
+				\item<6-> impredicative :( 
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{The Collapsing Function}
+\centering
+\begin{minipage}{0.45\textwidth}
+	\begin{align*}
+		B(\alpha) := 
+		\begin{cases}
+			\text{closure of } \{0, \textcolor{red}{\Omega}\} \text{ under:} \\
+			+ \\
+			 \xi \mapsto \omega^\xi \\ 
+			 \xi, \eta \mapsto \phi_{\xi}(\eta) \\ 
+			\xi \mapsto \psi_{\textcolor{red}{\Omega}}(\xi) \upharpoonright_{\xi < \alpha} 
+		\end{cases}\\
+	\end{align*}
+    \end{minipage}\hfill
+    
+    
+    \begin{minipage}{0.45\textwidth}
+	\begin{align*}
+		\psi_{\textcolor{red}{\Omega}}(\alpha) := min\{ \rho < \textcolor{red}{\Omega} \  | \  \rho \notin B(\alpha) \} 
+	\end{align*}
+    \end{minipage}
+\end{frame}
+
+
+\begin{frame}{$\Omega$, do we need you?}
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{align*}
+		B(\alpha) := 
+		\begin{cases}
+			\text{closure of } \{0,\circled{$\Omega$}\} \text{ under:} \\
+			+ \\
+			 \xi \mapsto \omega^\xi \\ 
+			 \xi, \eta \mapsto \phi_{\xi}(\eta) \\ 
+			\xi \mapsto \psi_{\Omega}(\xi) \upharpoonright_{\xi < \alpha} 
+		\end{cases}\\
+	\end{align*}
+    \end{minipage}\hfill \\
+    
+    
+    \begin{minipage}{0.45\textwidth}
+	\begin{align*}
+		\psi_{\Omega}(\alpha) := min\{ \rho < \Omega \  | \  \rho \notin B(\alpha) \} 
+	\end{align*}
+    \end{minipage}
+
+\end{frame}
+
+\begin{frame}{$\Omega$, do we need you?}
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{align*}
+		B_{\color{red}{0}}(\alpha) := 
+		\begin{cases}
+			\text{closure of } \{0,\color{red}\xcancel{\Omega}\color{black}\} \text{ under:} \\
+			+ \\
+			 \xi \mapsto \omega^\xi \\ 
+			 \xi, \eta \mapsto \phi_{\xi}(\eta) \\ 
+			\xi \mapsto \psi_{\Omega}(\xi) \upharpoonright_{\xi < \alpha} 
+		\end{cases}\\
+	\end{align*}
+    \end{minipage}\hfill \\
+    
+    
+    \begin{minipage}{0.45\textwidth}
+	\begin{align*}
+		\psi_{\Omega\color{red},0\color{black}}(\alpha) := min\{ \rho < \Omega \  | \  \rho \notin B(\alpha) \} 
+	\end{align*}
+    \end{minipage} \pause
+
+ \textbf{Result:} 
+
+\begin{minipage}{0.45\textwidth}
+	\begin{align*}
+		B(\alpha) \cap \Omega =B_{0}(\alpha)\ \forall\ \alpha \leq \Omega.
+	\end{align*}
+\end{minipage}\pause
+
+
+
+\begin{minipage}{0.45\textwidth}
+	\begin{align*}
+		\psi_{\Omega}(\alpha)=\psi_{\Omega,0}(\alpha)\ \forall\ \alpha \leq \Omega
+	\end{align*}
+\end{minipage}
+
+\end{frame}
+
+
+\begin{frame}{$\Omega$, do we need you?}
+\centering
+\begin{minipage}{0.45\textwidth}
+	\begin{align*}
+		B_{\color{red}{0}}(\alpha) := 
+		\begin{cases}
+			\text{closure of } \{0,\color{red}\xcancel{\Omega}\color{black}\} \text{ under:} \\
+			+ \\
+			 \xi \mapsto \omega^\xi \\ 
+			 \xi, \eta \mapsto \phi_{\xi}(\eta) \\ 
+			\xi \mapsto \psi_{\Omega}(\xi) \upharpoonright_{\xi < \alpha} 
+		\end{cases}\\
+	\end{align*}
+\end{minipage}\hfill \\
+
+
+    \begin{minipage}{0.45\textwidth}
+	\begin{align*}
+		\psi_{\Omega\color{red},0\color{black}}(\alpha) &= min\{ \rho < \Omega \  | \  \rho \notin B\color{red}_0\color{black}(\alpha) \} 
+	\end{align*}
+    \end{minipage} \pause
+
+ \textbf{Result:} 
+
+\begin{minipage}{0.45\textwidth}
+	\begin{align*}
+		B(\alpha) \cap \Omega =B_{0}(\alpha)\ \forall\ \alpha \leq \Omega.
+	\end{align*}
+\end{minipage}\pause
+
+
+
+\begin{minipage}{0.45\textwidth}
+	\begin{align*}
+		\psi_{\Omega}(\alpha)=\psi_{\Omega,0}(\alpha)\ \forall\ \alpha \leq \Omega
+	\end{align*}
+\end{minipage}
+
+%\text{ Notice  that }\Omega\text{ is never in B (you can prove it by induction on }\alpha\text{ looking }B_(\alpha)^c
+
+\end{frame}
+
+
+\begin{frame}{A nice little lemma}
+\begin{minipage}{\textwidth}
+
+    \textbf{Fact} \\
+    
+    
+    $\alpha \notin B_0(\alpha) \Rightarrow B_0(\alpha) = B_0(\alpha + 1) \text{ and }\psi_{\Omega,0}(\alpha) = \psi_{\Omega,0}(\alpha+1)$ \\ \pause
+    
+
+    $\alpha \notin B(\alpha) \Rightarrow B(\alpha) = B(\alpha + 1) \text{ and }\psi_{\Omega}(\alpha) = \psi_{\Omega}(\alpha+1)$ \\ \pause
+    
+    \textbf{Corollary} $B_0(\Omega+1) = B_0(\Omega)$. In fact, it actually halts from now on. And $\psi_{\Omega,0}$ too.
+\end{minipage}
+\end{frame}
+
+
+\begin{frame}{What about B($\Omega$ + 1)?}
+\begin{minipage}{0.85\textwidth}
+\begin{align*}
+\tiny
+    B(\Omega+1) = \{\visible<2->{0}\visible<3->{,1}\visible<4->{,\cdots}\visible<5->{,\omega,\cdots}\color{red}\visible<6->{,\psi_{\Omega}(\Omega)\visible<7->{,\psi_{\Omega}(\Omega)+1}\visible<8->{\text{\large, more stuff}}\color{black}}
+\end{align*} 
+
+\end{minipage}
+\begin{minipage}{0.1\textwidth}
+\begin{align*}
+    \raggedright , \Omega,\cdots\}
+\end{align*}
+\end{minipage}\hfill\newline\newline
+
+
+
+\visible<9->{
+\begin{minipage}{0.8\textwidth}
+Of course $B(\Omega) \cap \Omega \supseteq B_0(\Omega)$
+\end{minipage}\hfill\newline
+}
+
+\visible<10->{
+\begin{minipage}{0.8\textwidth}
+But $\psi_{\Omega}(\Omega) \notin B_0(\Omega)$ by definition, so the inclusion is strict!
+\end{minipage}\hfill\newline
+}
+
+\visible<11->{So $\Omega$ is useful after all.}
+
+% This is the first impredicative value!
+
+\end{frame}
+
+
+\begin{frame}{Let´s construct the enumeration system!}
+\begin{minipage}{\textwidth}
+
+
+\text{\textbf{Definition: 9.13} The set OT($\Omega$) and G$\alpha$ for $\alpha \in$ OT($\Omega$)} are inductively defined by the following clauses: \\
+
+\text{(R1) 0,$\Omega \in$ OT($\Omega$) and G0 = G$\Omega$ := 0}\\
+
+\text{(R2) If $\alpha =_{NF} \alpha_1 + \cdots + \alpha_n, n>1$ and $\alpha_1, \cdots, \alpha_n \in OT(\Omega)$}
+
+\text{then $\alpha \in OT(\Omega)$ and $G\alpha = max(G\alpha_1,\cdots,G\alpha_n) + 1$}\\
+
+\text{(R3) If $\alpha =_{NF} \phi_\beta(\delta), \beta, \delta < \Omega$ and $\beta,\delta \in OT(\Omega)$}
+
+\text{then $\alpha \in OT(\Omega)$ and $G\alpha = max(G\beta,G\delta) + 1$}\\
+
+\text{(R4) If $\alpha =_{NF} \omega^\beta, \beta > \Omega$ and $\beta \in OT(\Omega)$}
+\text{then $\alpha \in OT(\Omega)$ and $G\alpha = (G\beta) + 1$}\\
+
+\text{(R5) If $\alpha =_{NF} \psi_\Omega(\Omega), \beta \in OT(\Omega)$ and $\beta \in B(\beta)$}
+
+\text{then $\alpha \in OT(\Omega)$ and $G\alpha = (G\beta)+1$}
+
+\end{minipage}\hfill\newline
+\end{frame}
+
+
+
+\begin{frame}{Why stay inside of B?}
+\begin{minipage}{\textwidth}
+
+    %Billy said:
+	From before:\\    
+    
+    \textbf{Fact}\\
+
+    $\alpha \notin B(\alpha) \Rightarrow B(\alpha) = B(\alpha + 1) \text{ and }\psi_{\Omega}(\alpha) = \psi_{\Omega}(\alpha+1)$ \\
+    
+\end{minipage}
+\end{frame}
+
+\begin{frame}{The Bachmann Howard ordinal}
+\begin{minipage}{\textwidth}
+	\begin{align*}
+		B(\alpha) = 
+		\begin{cases}
+			\text{closure of } \{0,\Omega\} \text{ under:} \\
+			+ \\
+			 \xi \mapsto \omega^\xi \\ 
+			 \xi, \eta \mapsto \phi_{\xi}(\eta) \\ 
+			\xi \mapsto \psi_{\Omega}(\xi) \upharpoonright_{\xi < \alpha} 
+		\end{cases}\\
+	\end{align*}
+\end{minipage}\hfill \\
+
+
+   \visible<1>{ 
+    \begin{minipage}{\textwidth}
+	\textbf{Proposition:} $\psi_\Omega(\varepsilon_{\Omega+1}) = B(\varepsilon_{\Omega+1}) \cap \Omega \subset OT(\Omega) \subset B(\varepsilon_{\Omega+1}) \cap \varepsilon_{\Omega+1}$
+	\end{minipage}}
+
+
+
+\visible<2->{\begin{minipage}{\textwidth}
+How far can we get?
+\end{minipage}\newline}
+
+
+\visible<3->{\begin{minipage}{\textwidth}
+$ \varepsilon_0,\Gamma_0,\cdots,\Gamma_{\psi(\Omega)} \in \text{OT}(\Omega)$
+\end{minipage}}
+   
+%\visible<3->{
+%\phi_\gamma(x_0,x_1,\cdots,x_\ro) < BV}
+
+\end{frame}
+
+
+\begin{frame}{The system KP}
+\begin{minipage}{\textwidth}
+
+   Extensionality: $a = b \rightarrow (F(x) \leftrightarrow F(x))$ \\
+   
+   Foundation: $\exists\ x\ G(x) \leftarrow \exists\ x\ (G(x) \wedge \forall y (y \in x \rightarrow  \neg G(y) ))$ \\
+   
+ 
+  Pair: $\exists x\ (x = \{a, b \})$\\
+  
+  Union: $\exists x\ (x = \bigcup a)$\\
+  
+ Infinity: $\exists\ x\ (x \not = \emptyset \wedge \forall\ y \exists\ z (y \in x \wedge z \in x \rightarrow y \in z))$\\
+  
+ $\Delta_0$ Separation: $\exists\ x\ ( x = \{y \in a : F(y) \}) \text{ for all } \Delta_0-\text{formulas }  F  \\ \text{ in which }x\text{ does not occur free}$\\
+
+$\Delta_0$ Collection: $\forall\ x\ \exists\ y (x \in a \rightarrow G(x, y)) \rightarrow \exists\ z \forall\ x \exists\ y (x \in a \wedge y \in z \rightarrow G (x, y)) \text{ for all } \Delta_0 \text{-formulas } G$
+
+ \end{minipage}
+\end{frame}
+
+
+\begin{frame}{The Constructable Hierarchy}
+\begin{minipage}{\textwidth}
+	\begin{align*}
+		L_0 :=  &\emptyset\\
+     L_{\alpha +1} := & \{X \subseteq L_{\alpha} \|\ X \text{ definable over } \langle L_\alpha, \in \rangle \} \\
+     L_{\alpha} := & \bigcup_{\beta < \alpha}  L_{\beta} \text{ for limit }\alpha\\
+   L := & \bigcup_{\alpha \in On} L_{\alpha}
+	\end{align*} 
+	 \end{minipage}\pause\newline\newline
+	 
+ \begin{minipage}{\textwidth}
+		$\| KP \| = \psi_{\Omega}(\varepsilon_{\Omega+1})$
+\end{minipage}
+
+
+\end{frame}
+
+\end{document}
