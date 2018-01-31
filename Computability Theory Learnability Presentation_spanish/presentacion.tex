@@ -1,6 +1,8 @@
 \documentclass[10pt]{beamer}
+\usepackage{tcolorbox}
 \usepackage{float}
 \usepackage{tikz}    
+\usepackage{amssymb}
 \usetheme[progressbar=frametitle]{metropolis}
 \usepackage{appendixnumberbeamer}
 \usepackage[normalem]{ulem}
@@ -23,16 +25,26 @@
 \institute{Exactas, UBA}
 % \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
 
+\newtcolorbox{mybox}[3][]
+{
+  colframe = #2!25,
+  colback  = #2!10,
+  coltitle = #2!20!black,  
+  title    = #3,
+  #1,
+}
+
+
 \begin{document}
 
 \maketitle
 
-\begin{frame}{Table of contents}
-  \setbeamertemplate{section in toc}[sections numbered]
-  \tableofcontents[hideallsubsections]
-\end{frame}
+%\begin{frame}{Table of contents}
+%  \setbeamertemplate{section in toc}[sections numbered]
+  %\tableofcontents[hideallsubsections]
+%\end{frame}
 
-\section{Introduction}
+%\section{Introducción}
 
 %TODO Probably approximately correct learning WIKIPEDIA, machine learning
 
@@ -40,7 +52,7 @@
 %TODO PAC LEARNABLE EQUIVALENTE A GLIVENKO CANTELLI https://www.cs.bgu.ac.il/~asml162/wiki.files/ugc-pac.pdf
 \begin{frame}[fragile]{¿Qué queremos definir?}
 
-¿Se puede inferir una función (o un conjunto de funciones) de manera computable a partir de finitas entradas?
+¿Se puede inferir una función de manera computable a partir de finitas entradas?
 
 
 %\begin{itemize}[<+- | alert@+>]
@@ -54,14 +66,13 @@
 \begin{frame}{¿Qué necesitamos para responder esa pregunta?}
 	\begin{itemize}{
 	\visible<1->{
-		\item ¿En qué espacio estamos trabajando?	\\
-	Ejemplo:
-	$\mathbb{X} = $\{funciones lineales\}
-	$f \in \mathbb{X} \Rightarrow $ $f$ se puede aprender con solo 2 datos.}
+		\item ¿De qué bolsa estamos sacando la función? \\
+		%De qué bolsa estamos sacando funciones?
+	Por ejemplo, si queremos aprender una función $f$ que \textbf{sabemos} que es lineal, se puede aprender con solo 2 datos.}
 	}
 	\visible<2->{
 		\item ¿Cuándo/Cuánto queremos aprender a la función?
-		No es lo mismo aprenderla luego de finitos pasos que en el límite,
+		No es lo mismo aprenderla luego de $n$ pasos con $n$ prefijado que en el límite,
 		o de manera probabilística.
 		}
 	
@@ -70,31 +81,29 @@
 	
 \end{frame}
 
-%TODO las recursive functions son las primitivas recursivas?
-
-
 \begin{frame}{Learnability in the limit}
 
 \underline{Notación}: Dada $f$ una función, notamos $f^{n}$ a la n-upla de pares $[<x_1,f(x_1)>,\cdots,<x_n,f(x_n)>]$, es decir, a un sample de tamaño n de la función $f$.
 
-\underline{Obs}: No se suele pedir que el sample está ordenado, pero por simplicidad vamos a asumir que sí.
-
-
-
-%TODO phi es la letra griega que tengo que usar?
-
-\underline{Definición}: Una clase $C$ de funciones computables se dice que \textbf{se puede aprender en el límite} ("learnable in the limit") $\Leftrightarrow$ existe una función computable total $g : \mathbb{N} \rightarrow \mathbb{N}$ llamada \textbf{aprendedora} ("\st{Alejandro} Learner") tal que $\forall f \in C \exists n_f \in \mathbb{N}$ tal que:
+\visible<2->{\begin{mybox}{green}{Definición}
+Una clase $C$ de funciones total computables se dice que \textbf{se puede aprender en el límite} ("learnable in the limit") $\Leftrightarrow$ existe una función computable total $g : \mathbb{N} \rightarrow \mathbb{N}$ llamada \textbf{aprendedora} ("\st{Alejandro} Learner") tal que $\forall\ f \in C\ \exists\ n_f \in \mathbb{N}$ tal que:
 
 \begin{itemize}
 
 %\item $\mathlarger{\mathlarger{\mathlarger{\mathlarger{\phi_{g(f^{n_f})}}}}}$ \huge{computa a $f$}
 
-\huge{ \item $\phi_{g(f^{n_f})}$ computa a $f$} 
+\visible<3->{ \Large \item $\phi_{g(f^{n_f})}$ computa a $f$}
 
-\item $\phi_{g(f^{n})} = \phi_{g(f^{n_f})} \forall n \geq n_f$
+\visible<4->{\item $g(f^{n}) = g(f^{n_f})\ \forall n\ \geq n_f$}
 \end{itemize}
+\end{mybox}}
 
-Denotamos $\mathcal{LIM}$ como el conjunto de las clases que se pueden aprender en el límite.
+
+\visible<5->{
+Denotamos $\mathcal{LIM}$ como el conjunto de las clases que se pueden aprender en el límite.}
+
+\visible<6->{\underline{Obs}: podríamos pedir que el sample no venga ordenado.}
+
 
 \end{frame}
 
@@ -104,107 +113,147 @@ Denotamos $\mathcal{LIM}$ como el conjunto de las clases que se pueden aprender 
 Trivialmente, $\forall f$ computable, $\{f\} \in \mathcal{LIM}$ vía $g(n) \equiv e$, donde $e$ es el número de programa de $f$.
 
 
-\visible<2>{Ejercicio: Si $C$ es un conjunto finito de funciones computables, $C \in LIM$}
+\visible<2->{Ejercicio: Si $C$ es un conjunto finito de funciones computables, $C \in LIM$}
 
-\visible<3>{Ejercicio: $\{K\}$, visto como función característica, no está en $LIM$}
+%\visible<3->{Ejercicio: $\{K\}$, visto como función característica, no está en $LIM$}
 
+\visible<3->{¡Lo interesante es ver clases infinitas de funciones computables!}
 
 \end{frame}
 
 
-\begin{frame}{Lo interesante es ver clases infinitas de funciones computables}
+\begin{frame}{Ajustemos la definición}
 %https://cs.uwaterloo.ca/~watrous/CS360.Spring2017/Lectures/18.pdf
 
-\underline{Def}: Vamos a decir que una clase de funciones totales $C$ se puede t-aprender en el límite si se puede aprender en el límite vía una función $g$ tal que $\phi_{g(n)}$ es total $\forall$ n. Llamamos $\mathcal{TOTAL}$ al conjunto de clases que se pueden t-aprender.
-
+\begin{mybox}{green}{Definición}
+Vamos a decir que una clase de funciones totales $C$ se puede t-aprender en el límite si se puede aprender en el límite vía una función $g$ (total, como antes) tal que $\phi_{g(n)}$ es total $\forall$ n. Llamamos $\mathcal{RTOTAL}$ al conjunto de clases que se pueden t-aprender.
+\end{mybox}
 %\underline{Obs}: en inglés es "R-learnable in the limit" porque llaman "recursivas" a las computables totales (y "partial recursive" a las parcial computables)
 
-\underline{Obs}: $\mathcal{TOTAL}$ $\subset$ $\mathcal{LIM}$ (vía la misma g) trivialmente.
+\visible<2->{\underline{Obs}: $\mathcal{RTOTAL}$ $\subset$ $\mathcal{LIM}$ (vía la misma g)}
+
+\end{frame}
+
+%TODO: agregar los recuadros de teoremas.
+
+%TODO contar por que va la R en RTOTAL
+\begin{frame}{Caracterización de $\mathcal{RTOTAL}$}
+
+\begin{mybox}{green}{Definición}
+$C$ es computablemente enumerable como conjunto de funciones si existe una función "enumeradora" computable $\psi$,
+ tal que $\forall\ f\ \in C\ \exists\ i$ tal que $f = \psi_i$
+\end{mybox}
+\visible<2->{\begin{mybox}{black}{Teorema}
+Dada una clase de funciones totales $C$, $C \in \mathcal{RTOTAL} \Leftrightarrow$ $C$ es un subconjunto de \textbf{una familia de funciones totales} computablemente enumerable.
+\end{mybox}}
+
+\visible<3->{
+	
+	dem: ejercicio (?)
+	Idea:
+	\begin{itemize}
+		\item Si $C$ se puede aprender, la función $g$ learner me genera el superset enumerable de $C$.
+		\item Si $C$ está generado por $\psi$, la hipótesis que devuelvo para entrada será la primera función que me genera $\psi$ compatible con esa entrada. Eso casi que funciona.
+		
+%		*En realidad hay que arreglarlo para que $\phi_{g(n)}$ sea siempre total.
+		\end{itemize}}
+\end{frame}
+
+
+\begin{frame}{Imagen que le pedí prestada a Gaby Senno}
+Para la vuelta:
+
+	\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\columnwidth]{learning.pdf}
+\caption {Luego de ver $f(0)=0, f(1)=0,f(2)=1$, la función learner $g$ devuelve $\psi(i)$,i.e, $\phi_{g(f^3)}(x) = \phi_{\psi(i)}(x)$ \label{figLearn}}
+%{Let $\{s_i\}_{i\in\NN}$ be a computable enumeration of a class of (in this case $0,1$-valued) total computable functions. Learning by enumeration works as folllows: after seeing $f(0)=1$, $f(1)=0$ and $f(2)=1$, the guess for (a program comoputing) $f$ will be the first TM in the enumeration whose outputs match those values (in the example, $s_6.$) \label{figLearn}}
+\end{figure}
 
 \end{frame}
 
 
-\begin{frame}
-	Teorema: dada una clase de funciones totales $C$, $C \in \mathcal{TOTAL} \Leftrightarrow$ $C$ es un subconjunto de una familia de funciones totales computablemente enumerable.
-	
-	dem: %TODO hacer
-\end{frame}
+\begin{frame}{Funciones acotadas temporalmente por una $T$}
+\begin{mybox}{green}{Definición}
+Dada $T$ una función computable (total), decimos que $f$ es computable en tiempo $O(T(n))$ si para casi todo $n$ $f$ tarda a lo sumo $T(n)$ pasos en computar $T(n)$.
+\end{mybox}
+\visible<2->{
+\begin{mybox}{black}{Proposición}
+Dada $T$ como arriba, la clase de funciones $C_T$ computable en tiempo $O(T(n))$ es computablemente enumerable (¡en el sentido de funciones!)
+\end{mybox}}
 
-
-%TODO poner titulo
-\begin{frame}{titulo (I)}
-	\underline{Def}: Dada $T$ una función computable (total), decimos que $f$ es computable en tiempo $O(T(n))$ si para casi todo $n$ $f$ tarda a lo sumo $T(n)$ pasos en computar $T(n)$.
+	\visible<3->{
+	dem: la idea es dar para cada $i$ una función $f$ que para casi toda entrada $n$ tarde menos de $T(n)$ pasos en computarla.}
 	
-	\underline{Proposición}: Dada $T$ como arriba, la clase de funciones $C_T$ computable en tiempo $O(T(n))$ es computablemente enumerable (¡en el sentido de funciones!)
+	\visible<4->{
+	Idea:
 	
-	dem: la idea es dar para cada $i$ una función $f$ que para casi toda entrada $n$ tarde menos de $T(n)$ pasos en computarla.
-	
-	$\psi(i,x)$ va a hacer lo siguiente:
-	
-	
-	
-	%TODO como time-bounded permite finitos errores en realidad hay que hacer g(i,j) con g(i,j) el i-esimo programa que tiene menos de j valores donde explota.
-	Corro el programa $\phi_i$ con entrada $1$ hasta tiempo $T(1)$. Si no termina, devuelvo $0$ (algún número de programa de la función constantemente $0$).
-	
-	Si termina, corro $\phi_i$ con entrada $k$ hasta tiempo $T(k) \forall k \leq x$. Si en algún momento tardo se cumple que $\phi_i(k)$ no terminó a tiempo $T(k)$ devuelvo $0$.
-	
-	Si $\forall\ k\ \phi_i(k)$ tarda el tiempo correcto, devuelvo  (el nro de) $\phi_i(x)$.
-	
-	
+	$\psi(i)(x)$ va a hacer lo siguiente: corre el programa $\phi_i$ con entrada $1$ hasta tiempo $T(1)$. Si no termina, devuelve $0$ (algún número de programa de la función constantemente $0$).}
 	
 \end{frame}
 
-%TODO poner titulo
-\begin{frame}{titulo (II)}
+\begin{frame}{(sigue la demo)}
 
-¿Por qué esto es correcto?
+Si termina, corre $\phi_i$ con entrada $k$ hasta tiempo $T(k)\ \forall\ k \leq x$. Si en algún momento tardo se cumple que $\phi_i(k)$ no terminó a tiempo $T(k)$ devuelve $0$.
 	
-$\forall i$, si $\phi_i \not \in C_T$, entonces $\psi_i$ es 0 ctp (y por lo tanto está en $C_T$). Y si $\phi_i \in C_T$, entonces $\psi_i \equiv \phi_i$. $\qed$
+	Si $\forall\ k\ \phi_i(k)$ tarda el tiempo correcto, devuelve  (el nro de) $\phi_i(x)$.
+
+¿Por qué esto es (casi)* correcto?
+	
+$\forall\ i$, si $\phi_i \not \in C_T$, entonces $\psi_i$ es 0 ctp (y por lo tanto está en $C_T$). Y si $\phi_i \in C_T$, entonces $\psi_i \equiv \phi_i$.
+
+*Una sutileza que no estoy tratando: por simplicidad, no genero las funciones que en finitas entradas se pasan de tiempo. Eso se arregla cambiando $\psi(i)$ por una $\psi(i,j)$ acorde. $\qed$
 
 
 \end{frame}
 
-\begin{frame}
-	Teorema: Si $T$ es una función computable, la clase de funciones (totales) computable en tiempo O(T(n)) está en $\mathcal{TOTAL}$.
-	
-	dem: recién probamos que es computablemente enumerable. $\qed$
+\begin{frame}{Resultado fuerte}
+
+\begin{mybox}{black}{Teorema}
+	Teorema: Si $T$ es una función computable, la clase de funciones (totales) computable en tiempo O(T(n)) está en $\mathcal{RTOTAL}$.
+\end{mybox}
+	\visible<2->{dem: recién probamos que es computablemente enumerable. $\qed$}
 \end{frame}
 
 
 \begin{frame}{Corolarios copados}
 
-Las siguientes clases de funciones están en $\mathcal{TOTAL}$:
+Las siguientes clases de funciones están en $\mathcal{RTOTAL}$:
 
+%TODO por que PR mas lentas que ackerman
 \begin{itemize}
-	\item Las PR (porque son más lentas que Ackerman)
-	\item Las funciones P, acotando por cualquier exponencial
-	\item Las NP: $NP \subsetneq EXSPACE = O(2^{p(n)}) space \subsetneq O(2^{e^n}) space \subset O(2^{(2^{e^n})}) time$
+	\item PR (porque son más lentas que Ackerman)
+	\item P, acotando por cualquier exponencial
+	\item NP (¡en serio!): $NP \subsetneq EXSPACE = O(2^{p(n)}) space \subsetneq O(2^{e^n}) space \subset O(2^{(2^{e^n})}) time$
 
 % Esto se da porque https://stackoverflow.com/questions/18686121/differences-between-time-complexity-and-space-complexity
 % si tengo k lugares, solo puedo tener 2^k configuraciones distintas.
 % esto es un chamullo porque necesitas espacio para guardar la cantidad de pasos que hiciste...
 
-%TODO esto esta bien? preguntarle a santi
-
-	\item BQP: $BQP \subset EXPTIME = O(2^{p(n)}) \subsetneq O(2^{e^n})$
+	\item BQP*: $BQP \subset EXPTIME = O(2^{p(n)}) \subsetneq O(2^{e^n})$
 	\item PSPACE
+	\end{itemize}
+
 	
-	donde BQP es la clase de problemas de decisión que se pueden resolver con una computadora cuántica en tiempo polinomial con una probabilidad de error siempre a lo sumo 1/3.
-\end{itemize}
+	*donde BQP es la clase de problemas de decisión que se pueden resolver con una computadora cuántica en tiempo polinomial con una probabilidad de error siempre a lo sumo 1/3.
 
 \end{frame}
 
 
 \begin{frame}{Existen clases que no se pueden aprender}
 
-
-	Teorema: la clase de funciones computables totales $TOT$ no está en $\mathcal{TOTAL}$
+\begin{mybox}{black}{Teorema}
+	Teorema: la clase de funciones computables totales $TOT$ no está en $\mathcal{RTOTAL}$
+\end{mybox}
 	
-	dem: argumento diagonal! Supongamos que $TOT$ está en $\mathcal{TOTAL}$ vía la función $g : \mathbb{N} \rightarrow \mathbb{N}$.
+	\visible<2->{
+	dem: argumento diagonal! Supongamos que $TOT$ está en $\mathcal{RTOTAL}$ vía la función $g : \mathbb{N} \rightarrow \mathbb{N}$.
 	
 	Defino $f : \mathbb{N} \rightarrow \mathbb{N}$ como:
 	$$f(0):=0$$
 	$$f(n+1) := \phi_{g(f^n)}(n+1) + 1$$
+	
+	Claramente $f$ y $\phi_{g(f^n)}$ nunca van a coincidir, para ninguna entrada $f^n$ (basta mirar la entrada $n+1$ para cada n).}
 	
 % O sea, le paso a g el primer valor de f
 % g me devuelve la hipótesis f_0
@@ -214,11 +263,7 @@ Las siguientes clases de funciones están en $\mathcal{TOTAL}$:
 % defino f(2) = f_2(2) +1. f \neq f_2
 % y así...
 	
-	
-	%TODO agregar "visible<2>
-	
-	
-	\visible<2>{$f$ es total computable, es decir, está en $R$ y $f$ y $\phi_{g(f^n)}$ siempre van a diferir en el valor $n+1$.}
+	\visible<3>{$f$ es total computable, es decir, está en $R$ y $f$ y $\phi_{g(f^n)}$ siempre van a diferir en el valor $n+1$. \qed}
 
 
 \end{frame}
@@ -226,7 +271,15 @@ Las siguientes clases de funciones están en $\mathcal{TOTAL}$:
 
 \begin{frame}{¿Y qué pasa con la unión?}
 
-Si dos clases se pueden aprender, ¿se podrá aprender la unión?
+
+
+\begin{tikzpicture}[remember picture,overlay]
+   \node[anchor=north east,inner sep=0pt] at (current page.north east)
+              {\includegraphics[trim=-15cm 0 4 -2cm, scale=0.7]{coffee.jpg}};
+\end{tikzpicture}
+
+
+\LARGE Si dos clases se pueden aprender, ¿se podrá aprender la unión?
 
 
 % Y que pasa con LIM? No es cerrado por uniones
@@ -234,9 +287,6 @@ Si dos clases se pueden aprender, ¿se podrá aprender la unión?
 
 
 % http://web.mit.edu/6.863/www/spring2010/readings/gold67limit.pdf
-
-%TODO agregar visible<2>
-
 
 %¿Y si tomo unión numerable? \newline
 
@@ -255,14 +305,6 @@ Si dos clases se pueden aprender, ¿se podrá aprender la unión?
 
 
 
-%TODO NEXT-VALUE-LEARNABLE
-%TODO cambiar el font de LIM, y R-TOTAL
-%TODO cambiar R-TOTAL POR TOTAL-LIM
-%TODO la notacion es Phi o phi?
-%TODO en todos lados aclarar que es total, que es computable total,etc
-%TODO agregar la mancha de cafe
-%TODO aclarar que significa que una familia de funciones sea computablemente enumerable
-
 %TODO Agregar la siguiente observacion en algun lugar:
 
 % cualquier subconjunto de una clase que se puede aprender, se puede aprender, vía la misma estrategia.
@@ -272,44 +314,128 @@ Si dos clases se pueden aprender, ¿se podrá aprender la unión?
 
 
 \begin{frame}{Otra manera de aprender}
-	Definición: una clase $C$ de funciones totales se dice predecible \sout{o aburrida} si existe una función computable total $S$ a la que vamos a llamar "eStrategia" tal que $S(f^n) = f(n+1) \forall f \in C$ y para casi todo $n$ (le permitimos finitos errores).
+\begin{mybox}{green}{Definición}
+	Una clase $C$ de funciones totales se dice predecible \sout{o aburrida} si existe una función computable total $S$ a la que vamos a llamar "eStrategia" tal que $S(f^n) = f(n+1) \forall f \in C$ y para casi todo $n$ (le permitimos finitos errores).
 	
 	O sea, pedimos poder predecir casi siempre el siguiente valor de una función.
 	
 	Denotamos por $NV$ (por "Next Value") 
+	\end{mybox}
 \end{frame}
 
 \begin{frame}{¡Teorema!}
 
-
-\begin{tikzpicture}[remember picture,overlay]
-   \node[anchor=north east,inner sep=0pt] at (current page.north east)
-              {\includegraphics[trim=-5cm 0 0 -2cm, scale=0.7]{coffee.jpg}};
-\end{tikzpicture}
 %\includegraphics[scale=0.20]{coffee.jpg}
 
 
-\huge $\newline$ Teorema que no voy a demostrar:
-$NV = R-TOTAL$
+\begin{mybox}{black}{Teorema}
+$NV = \mathcal{RTOTAL}$
+\end{mybox}
 
 \end{frame}
 
-
-\begin{frame}{¿Es consistencia en las hipótesis mucho pedir?}
+%TODO no voy a decir nada de esto
+%\begin{frame}{¿Es consistencia en las hipótesis mucho pedir?}
 
 % Mirando la demo del teorema que decia que los conjuntos enumerables de funciones se podían aprender, vimos que nunca tirábamos hipótesis que contradecían los datos de entrada
 
-Definición: una clase $C$ de funciones se dice que se puede aprender de manera consistente si una función $\exists\ g$ learner como antes tal que, además, $\forall\ f \in C, n \in \mathbb{N}$, $\phi_{g(f^n)}(i) = f(i)\ \forall\ i \leq n$ \newline
+%Definición: una clase $C$ de funciones se dice que se puede aprender de manera consistente si una función $\exists\ g$ learner como antes tal que, además, $\forall\ f \in C, n \in \mathbb{N}$, $\phi_{g(f^n)}(i) = f(i)\ \forall\ i \leq n$ \newline
 
-Notación que vamos a usar: $\mathcal{LIM_{CONS}}$, $\mathcal{TOTAL_{CONS}}$
+%Notación que vamos a usar: $\mathcal{LIM_{CONS}}$, $\mathcal{TOTAL_{CONS}}$
 
 
-¿Cambiará algo? ¡Veamos a dónde nos lleva esto!
+%¿Cambiará algo? ¡Veamos a dónde nos lleva esto!
 
+%\end{frame}
+
+
+
+%TODO R-TOTAL SE DEFINIA CON EL NUMERO DE FUNCION? RESPUESTA: SI. arreglar
+\begin{frame}{Otra manera más de aprender}
+	\begin{mybox}{green}{Definición}
+	Convergencia semántica en el límite con anomalías: decimos que una clase $C$ se puede aprender correctamente en el límite, pero con $a$ anomalías si $\exists g / \forall\ f\ \in\ C$,
+	\begin{itemize}
+		\item $\forall\ n\ \in\ \mathbb{N} g(n)$ está definida (esto no cambia)
+		\item $\exists\ j \in \mathbb{N}$ tal que $\phi_{S(f^n)} = f\ \forall n \geq n_0$.
+	\end{itemize}
+	\end{mybox}
+	
+	\visible<2->{Notación: $C \in \mathcal{BC}$}
+	
+	\visible<3->{Comentario: TOT$\not \in \mathcal{BC}$. Además no es cerrado por uniones finitas.}
+
+\end{frame}
+
+%TODO R-TOTAL SE DEFINIA CON EL NUMERO DE FUNCION? RESPUESTA: SI. arreglar
+\begin{frame}{Última}
+	Notación: Dado $a \in \mathbb{N}, f =^a g$ sii $f(x) = g(x)\ \forall\ x \geq a$. Para a = *, pedimos igualdad para todo x salvo finitos.
+	
+	
+	\visible<2->{\begin{mybox}{green}{Definición}
+	Convergencia en el límite con anomalías: decimos que una clase $C$ se puede aprender correctamente en el límite, pero con $a$ anomalías si $\exists\ g /\ \forall\ f\ \in\ C$,
+	\begin{itemize}
+		\item $\forall\ n\ \in\ \mathbb{N} g(n)$ está definida (esto no cambia)
+		\item $\exists j \in \mathbb{N} / \phi_j =^a f$ y $S(f^n)$ converge a j.
+	\end{itemize}
+	\end{mybox}}
+	
+	\visible<3>{
+	
+	Más notación: $C \in \mathcal{LIM}^a$.}
+	
+	
+	\visible<4->{Observación: $\mathcal{LIM}^0=\mathcal{LIM}$}
+
+\end{frame}
+
+\begin{frame}{Me encanta decir cosas sin demostrarlas}
+
+
+\begin{mybox}{black}{Teorema}
+$$\mathcal{LIM} \subsetneq \mathcal{LIM}^1 \subsetneq \mathcal{LIM}^2 \subsetneq \mathcal{LIM}^3 \subsetneq ... \bigcup\limits_{a \in \mathbb{N}} \mathcal{LIM}^a \subsetneq \mathcal{LIM}^* \subsetneq BC$$
+\end{mybox}
+
+\visible<2->{\begin{mybox}{black}{Teorema}
+$$\mathcal{BC} \subsetneq \mathcal{BC}^1 \subsetneq \mathcal{BC}^2 \subsetneq \mathcal{BC}^3 \subsetneq ... \bigcup\limits_{a \in \mathbb{N}} \mathcal{BC}^a \subsetneq \mathcal{BC}^*$$
+\end{mybox}}
+
+\visible<3->{\begin{mybox}{black}{Teorema}
+$TOT \in BC^*$
+\end{mybox}}
 
 
 \end{frame}
 
+
+\begin{frame}{Fin}
+
+Preguntas? \bigskip \bigskip
+
+
+\includegraphics[scale=0.2]{alan.jpg}
+\indent\ If Alan was alive, he'd be so happy about gay marriage that he would buy \color{orange}Tu\color{blue}rings\color{black}!
+\includegraphics[scale=0.015]{tu.png}
+
+Right? Right?! ... I'll see myself out.
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
 
 \begin{frame}[fragile]{Sections}
   Sections group slides of the same topic
@@ -369,36 +495,6 @@ Notación que vamos a usar: $\mathcal{LIM_{CONS}}$, $\mathcal{TOTAL_{CONS}}$
 
 \section{Elements}
 
-
-\begin{frame}[fragile]{Dar ejemplo de aprender funciones lineales}
-
-Ademas es facil aprender una sola funcion, para capturar la nocion de aprender sin hacer trampa el algoritmo no debe depender de la funcion
-
-
-Hablar de K (2.6 tesis de gaby). K no se puede aprender porque en particular no es computable, pero si admite una martingala.
-
-En efecto, dados finitos elementos de K,...esperas a que haya un 1 y te construis infinitos programas que halteen y apostas en esos.
-\end{frame}
-
-
-
-\begin{frame}[fragile]{Cosas que implican learnability en el limite}
-hola
-\end{frame}
-
-\begin{frame}[fragile]{Aplicaciones en el lenguaje}
-hola
-\end{frame}
-
-\begin{frame}[fragile]{Aplicaciones en teoria de juegos....tiene que haber alguna}
-
-aparentemente hay pero de manera probabilistica
-
-\end{frame}
-
-
-
-
 \begin{frame}
 
 Desde la pagina 15 hay distintas definiciones de learnability con resultados
@@ -409,6 +505,30 @@ que significa aprender clases de funciones
 R-Total teorema 2.5.5 gaby equivalencia 
 
 \end{frame}
+
+
+
+
+%TODO hacer diagrama con LIM, TOTAL, RTOTAL, y uno mas diciendo quien es mas fuerte y que se gana y que se pierde.
+%TODO no, mejor hacer círculos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \begin{frame}[fragile]{Typography}
@@ -604,11 +724,11 @@ or show \textbf{bold} results.\end{verbatim}
 \end{frame}
 }
 
-\begin{frame}{References}
-  Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
-\end{frame}
+%\begin{frame}{References}
+%  Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
+%\end{frame}
 
-\section{Conclusion}
+%\section{Conclusion}
 
 \begin{frame}{Summary}
 
@@ -640,12 +760,12 @@ or show \textbf{bold} results.\end{verbatim}
   \themename will automatically turn off slide numbering and progress bars for
   slides in the appendix.
 \end{frame}
+\fi
 
-\begin{frame}[allowframebreaks]{References}
+%\begin{frame}[allowframebreaks]{References}
+%  \bibliography{demo}
+%  \bibliographystyle{abbrv}
 
-  \bibliography{demo}
-  \bibliographystyle{abbrv}
-
-\end{frame}
+%\end{frame}
 
 \end{document}
