@@ -200,6 +200,445 @@
 \maketitle
 
 
+\begin{frame}{¿Qué es una rotación?}
+
+% Antes de empezar estaría bueno ponernos de acuerdo en la respuesta a esta pregunta: ¿qué es una rotación?
+
+¿...?
+
+% Hay definiciones de rotaciones bien matemáticas, formales, generales, que no nos interesan. Sin embargo, distingamos un par de propiedades de las rotaciones
+
+\pause
+
+\begin{itemize}
+	\item Después de una rotación, los cuerpos rígidos mantienen su forma. % Rotan todos juntos	
+	%\item Preservan la orientación de los objetos.
+	\item Siempre hay un punto que queda quieto en el sistema de referencia, al que llamamos origen, o centro.
+\end{itemize}
+
+% El objetivo de la charla va a ser entender las rotaciones de una manera más "abstracta", usando  números complejos, matrices y finalmente cuaterniones. Pero también al revés: dado alguno de estos objetos matemáticos, vamos a querer imaginarnos la rotación que representan.
+
+
+\includegraphics[scale=0.8]{rigid.png}
+\includegraphics[scale=0.11]{fixed.png}
+
+\end{frame}
+
+\begin{frame}{Rotaciones en $2D$: con números complejos}
+
+% Empecemos por las rotaciones en $\R^2$, que son más fáciles. ¿Cómo son? ¿Cómo se describen? ¿Cómo hago para [PIZARRÓN] armar una rotación (con centro en el origen) que mueva un punto $P$ a un punto $Q$ (de la misma longitud)?
+
+% Acá los números complejos nos van a resultar muy útiles. Así que veamos qué eran.
+
+Empecemos por las rotaciones en $2D$, usando números complejos. \bigskip
+
+\pause
+
+%TODO agregar imagen de conjuntos aritméticos y dejar eso en vez de esto:
+\small{Nats $\rightarrow$ Enteros (tienen negativos)}
+
+Reales $\rightarrow$ Complejos ($\rightarrow$ ¡Cuaterniones!) \pause \bigskip
+
+¿Cuánto vale $\sqrt{-1}$?\pause\ Bueno, llamémoslo $\ii$ \pause
+
+
+¿Y qué hacemos con eso? ¿Cómo hacemos cuentas?
+
+% Los números complejos no son nada más que un "upgrade" que led hacemos a los números que ya teníamos. En la primaria empezamos con los naturales, después nos preguntamos qué pasaba si le restábamos un número más grande a un número más chico y aparecieron los enteros, que son los que también pueden ser negativos, y para responder preguntas similares nos inventamos a los números racionales y a los reales, que son los qué conocemos más o menos bien.
+
+% Los números complejos aparecen al responder la pregunta: "cuánto vale \sqrt{-1}"?
+
+
+%PIZARRÓN: $i^2=-1$.
+
+% Es una abstracción más, así como los números negativos son una abstracción a la que ya estamos super acostumbrados. Y...es una abstracción súper útil.
+
+% Ahora que nos inventamos un nuevo número \textbf{i}, podemos sumarlo y multiplicarlo por otros números, obteniendo:
+
+% PIZARRÓN: 1+i, 2+i, 3\cdot i, 2 + 3\cdot i
+
+% Y podemos preguntarnos qué representan esos nuevos números
+
+\end{frame}
+
+
+
+\begin{frame}{Números complejos en el plano}
+
+	%Y resulta que también es útil representar a los números complejos en un plano, como si tuvieran dos coordenadas. Veamos el siguiente ejemplo.
+	\includegraphics[scale=0.8]{1plusi.png}
+	
+	% Como $i^2=-1$
+	% Fíjense que cuando hacemos esto, les podemos inventar dos características nuevas a los números complejos:
+	\pause
+	
+	\begin{itemize}
+	
+		% Pitágoras
+		\item Longitud ('módulo'): $|1+\ii| = \sqrt{1^2 + |\ii|^2} = \sqrt{1+1} = \sqrt{2}$
+
+		% Trigonometría, SOHCAHTOA		
+		\item Ángulo: $\alpha = cos\m(\frac{CA}{HIP}) = cos\m(\frac{1}{\sqrt{2}}) = 45^\degree = \frac{\pi}{4}$
+	\end{itemize}
+\end{frame}
+
+\iffalse
+\begin{frame}{Conjugación}
+
+$$x = a+b\cdot \textbf{i} \Rightarrow x^* (=\bar{x}) = a\circled{-}b\cdot \textbf{\ii}$$
+
+% A los números complejos se los puede conjugar
+
+% Es cambiar el signo del numerito que acompaña a \textbf{i}
+\includegraphics[scale=0.8]{conjugado.png}
+
+%TODO ¿por qué es buena la conjugación? Porque nos re sirve para obtener inversos
+
+\end{frame}
+\fi
+
+
+\begin{frame}{Forma trigonométrica}
+
+¡Tener un número complejo es lo mismo que tener su ángulo y su módulo!
+	% Copio el dibujo en el pizarrón y hago trigonometría para probar la forma trigonométrica
+	
+	% SOH. sen(\alpha) = \frac{CO}{HIP} \Rightarrow CO = sen(\alpha) HIP = sen(\alpha) |z|
+	% CAH. cos(\alpha) = \frac{CA}{HIP} \Rightarrow CA = cos(\alpha) HIP = cos(\alpha) |z|
+	
+	% Entonces si tengo z = a+bi, CA = a, CO = b, y sacando factor común obtenemos...
+	
+	De hecho si el número es $a + b\cdot i$ entonces:
+	
+	$$cos(\text{ángulo}) \cdot \text{longitud} = a$$
+	$$sen(\text{ángulo}) \cdot \text{longitud} = b$$
+	
+\iffalse
+\[
+	z = a + b\cdot i = \text{longitud} \cdot [\underbrace{cos(\text{ángulo})}_{a/HIP} + \ii\cdot \underbrace{sen(\text{ángulo})}_{b/HIP}]
+\]
+
+Escrito con letras:
+
+\[
+	z = a + b\cdot i = |z| \cdot [\underbrace{cos(\alpha)}_{a/HIP} + \ii\cdot \underbrace{sen(\alpha)}_{b/HIP}]
+\]
+
+\fi
+\end{frame}
+
+
+\begin{frame}{¿Cómo operar?}
+	% Algo que pasa y que se puede demostrar con más trigonometría pero que no vamos a hacer es que cuando multiplicamos dos números complejos, lo que obtenemos es un nuevo número complejo donde los módulos se multiplican y los ángulos se suman
+	
+	Si $z,w$ son complejos, entonces $z \cdot w$ 'es' sumar los ángulos y multiplicar las longitudes (los 'modulos'). \pause
+	
+	
+	
+	¡Hagamos un ejemplo! ¿Cuánto da $(1+\ii)\cdot \i$?
+	
+%	Si $z = |z|\cdot [cos(\alpha) + \ii\cdot sen (\alpha)]$,\\
+%	   $w = |w|\cdot [cos(\beta) + \ii\cdot sen (\beta)]$ \\
+%	   entonces $z\cdot w = |z|\cdot |w|\cdot [cos(\alpha+\beta) + \ii \cdot sen(\alpha+\beta)]$
+	   
+	   % O sea, el módulo del nuevo número complejo es $|z||w|$, y el ángulo es $\alpha+\beta$
+	   
+	   % Un buen ejemplo es i^2=-1 (el módulo es 1 y el ángulo pasa de pi/2 a pi)
+\end{frame}
+
+
+\begin{frame}
+
+\Huge{Muy lindo, ¿pero y con las rotaciones qué onda?}
+
+Pensemos un poco cómo se relacionan.
+
+% Fíjense qué bueno: si agarramos a un número complejo y lo multiplicamos por otro de módulo $1$, ¡lo estamos rotando! porque el módulo del primer complejo no cambia pero su ángulo sí.
+
+%Hacer ejemplo en el pizarrón: 1\cdot i, (1+i) \cdot i$
+
+\end{frame}
+
+\begin{frame}{Ejemplo}
+
+¿Cómo llevo el punto $(1,1)$ al punto  $(-\sqrt{2},0)$?
+
+% PIZARRÓN dibujar
+% Fíjense que necesito que los dos tengan el mismo módulo (la misma longitud), sino el problema es imposible.
+
+% Se puede obtener el ángulo de 1+i con trigonometría pero es aburrido y además existen funciones que ya te lo hacen.
+
+% Necesito ángulo 3/4 pi, entonces lo escribo en forma trigonométrica y listo.
+\end{frame}
+
+%TODO tal vez otra imagen sería mejor
+\begin{frame}
+
+% Los complejos de módulo 1 representan rotaciones, y fíjense que si tenés modulo 1 estás en la circunferencia de radio 1. En ese sentido el número complejo indica qué rotación es.
+\includegraphics[scale=0.35]{unit_circle.png}
+
+\end{frame}
+
+\begin{frame}{¿Cómo invierto una rotación?}
+
+%TODO Expandir
+¿Será difícil? \pause
+
+Si tengo $a+b\cdot \textbf{i}$ con ángulo $\alpha$ y quiero otro número complejo con ángulo $-\alpha = 2\pi - \alpha$, lo conjugo, es decir, uso $a-b\cdot\textbf{i}$
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{conjugado.png}
+\end{figure}
+
+% Y fíjense qué copado. Cuánto da z \bar{z}? Es posta el inverso! (Si el módulo es 1)
+
+\end{frame}
+
+
+
+% Para el final de números complejos
+\begin{frame}{Volvamos a \textbf{i}}
+
+¿Cuál es la solución de $x^2=-1$? \pause
+
+% Fíjense que esta ecuación es lo mismo que esta.
+
+$1\cdot x^2 = -1$
+
+% Y ahora la pregunta es: ¿qué rotación, aplicada 2 veces, lleva el 1 a -1?
+% Hay que girar 2 \pi, pero haciendo dos veces la misma rotación. O sea, la rotación tiene que ser de \pi, un ángulo recto. Y qué número complejo representa un número recto? i! 
+
+\pause
+
+\includegraphics[scale=0.78]{rotate1m1.png}
+
+
+\end{frame}
+
+
+\begin{frame}{Volvamos a \textbf{i} (cont)}
+	\includegraphics[scale=0.78]{rotate1m1_2.png}
+	
+	% Y el álgebra nos lo confirma: (-i)\cdot (-i) = (-1) \cdot i \cdot (-1) \cdot i = i \cdot i = 1$. Estamos usando que el producto es conmutativo.
+\end{frame}
+
+
+
+\iffalse
+
+%TODO hablo de matrices? Sirve para algo?
+\begin{frame}{Matrices}
+
+% Bueno, quiero pasar ahora a otra herramienta para entender rotaciones (y más adelante, en particular, a los cuaterniones)
+
+% Hablemos un poco de matrices.
+
+
+
+\[
+\begin{bmatrix}
+    1  &  -1      \\
+    0  &  2      
+\end{bmatrix}
+\visible<2->{\cdot
+\begin{bmatrix}
+    1  &  0      \\
+    0  &  2      
+\end{bmatrix} }
+\visible<3->{=
+\begin{bmatrix}
+    1  &  -2      \\
+    0  &  4      
+\end{bmatrix} }
+\]
+
+
+\end{frame}
+
+\begin{frame}{Matrices}
+\[
+\begin{bmatrix}
+    1  &  -1      \\
+    0  &  2      
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+    1  &  0      \\
+    0  &  2      
+\end{bmatrix}
+ =
+\begin{bmatrix}
+    1  &  -2      \\
+    0  &  4      
+\end{bmatrix}
+\] 
+
+\[
+\begin{bmatrix}
+    0  &  -1      \\
+    1  &  0      
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+      1      \\
+      0      
+\end{bmatrix}
+=
+\begin{bmatrix}
+    0        \\
+    1        
+\end{bmatrix}
+\]
+
+\end{frame}
+
+
+\begin{frame}{¿Y para qué sirven?}
+Algunas propiedades:
+	\begin{itemize}
+		\item Representan funciones (transformaciones del espacio).
+		\item Los números complejos se pueden ver como matrices
+		\item Algunas matrices representan rotaciones
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Las matrices como funciones (transformaciones lineales)}
+
+$ A \leftarrow$ matriz
+
+$ x \leftarrow$ punto ('vector') genérico de $\R^2$ (el plano) \bigskip
+
+Puedo definir la siguiente función:
+
+\Huge $$f(x) = A\cdot x$$
+
+% Gracias a que cuando multiplico una matriz por un vector me da otro vector, dada una matriz me puedo definir una función.
+
+
+
+
+\end{frame}
+
+
+\begin{frame}{Números complejos como matrices}
+
+Si $z=a+bi$, ¡se puede expresar como matriz! \pause
+
+\[
+\begin{bmatrix}
+    a  &  -b      \\
+    b  &  a      
+\end{bmatrix}
+\]
+
+\begin{itemize}
+	\item El producto de complejos se corresponde con el producto de matrices
+	\item Todo anda bien
+\end{itemize}
+	
+% Esa matriz guarda la información, con dos valores repetidos, del número complejo. O sea, el número está en la primera columna.
+
+% Y el producto de dos complejos anda bien, veamos un ejemplo
+
+% Que el ejemplo sea (1+i) (i)
+
+
+	
+\end{frame}
+
+
+\begin{frame}{Algunas matrices son rotaciones}
+
+Esto es una consecuencia de las dos slides anteriores.
+
+Si $z =  \underbrace{cos(\alpha)}_{a} + i \underbrace{\ sen(\alpha)}_{b}$ (o sea, tiene módulo $1$), la matriz que le podemos asociar es:
+
+\[
+\begin{bmatrix}
+    cos(\alpha)  &  -sen(\alpha)      \\
+    sen(\alpha)  &  cos(\alpha)      
+\end{bmatrix}
+\] \pause
+
+Este tipo de matrices representan las rotaciones en $2D$.
+
+\begin{itemize}
+	\item Forman un \textbf{grupo} conmutativo llamado $SO(2)$.
+	%\item La inversa de una matriz allí es su transpuesta % Coincide con el inverso del complejo
+	\item En particular, todo elemento tiene inverso. %Conviene pensar en rotaciones!
+	%\item Tienen determinante $1$. % Coincide con el cuadrado del módulo del número complejo
+	
+\end{itemize}
+
+% Todas estas propiedades se pueden ver tanto viéndolas como números complejos, como con matrices, o simplemente pensando en rotaciones de $\R^2$
+
+% La idea es que elijan la manera de pensar qué más les guste pero si tienen una manera de pasar de un mundo a otro eso les puede servir para atacar un problema de varias formas distintas
+
+% Si uno piensa un problema con el enfoque que más le conviene, pero el resultado lo tiene que dar en el otro universo, hace la traducción y listo
+
+% Si quieren, por ejemplo, podemos tratar de entender cómo es el inverso de un número complejo de módulo 1, pensando con rotaciones.
+\end{frame}
+
+\fi
+
+
+\begin{frame}{¿Qué es una rotación (en $3D$)?}
+
+	\Huge ¿Qué es una rotación en $3D$?
+
+
+% Antes de cerrar la charla quiero empezar a hablar un poco de $\R^3$ y que se note la relevancia de todo lo que discutimos en $\R^2$
+
+	
+\end{frame}
+
+\begin{frame}{¿Qué es una rotación en $3D$? Formalismo matemático}
+	\includegraphics[scale=0.6]{images/rotation.png}
+	
+	%Una rotación de $\R^3$ está compuesta por un eje $\ell$ (que define un plano ortogonal) y un ángulo $\theta$...y ya sé lo que están pensando. Ese dibujo no se entiende.
+	
+\end{frame}
+
+
+\begin{frame}{¿Qué es una rotación en $3D$? Un pisa papas}
+
+%TODO El mango del pisa papas y la rejilla están a 90 grados. Y un pisapapas representa, bien en el fondo, una rotación en $\R^3$. El mango es el eje de rotación y un punto de la rejilla rota alrededor del mango con un ángulo fijo, como si fuera una rotación en $\R^2$ donde el origen está donde el mango y la rejilla se tocan.
+
+%PIZARRÓN: hagamos el dibujito en el pizarrón
+% Ojo que el pisa papas debe pasar por el origen! Sino no funciona la cosa
+
+% ¿Cómo gira un punto que no está en la rejilla? Bueno, según una rejilla imaginaria
+
+% Además el pisa papas puede estar inclinado de distintas maneras
+	\includegraphics[scale=0.2]{pisapapas_dadovuelta.png} \pause
+	\includegraphics[scale=0.2]{pisapapas_45.png}
+	\includegraphics[scale=0.2]{pisapapas_180.png}
+	
+	% Fíjense que una rotación en $\R^3$ deja fija a toda una recta (el mango del pisapapas), mientras que una rotación en $\R^2$ deja fijo solo al origen. "Aumenta una dimensión" de lo que dejás quieto	
+	
+\end{frame}
+
+
+
+
+
+\begin{frame}{Otro pisa papas}
+
+	% Puede estar inclinado "en profundidad"
+	\includegraphics[scale=0.3]{pisapapas_prof.png}
+	
+
+	% Por eso son tan importantes las rotaciones en $\R^2$ para entender las que son en $\R^3$, por eso nos sirven las herramientas que aprendimos antes
+	
+	% Una rotación en $\R^3$ no es más que muchas rotaciones imaginarias: una por cada rejilla imaginaria - hay una por cada altura y de cada radio posible - que atraviesa de manera ortogonal al mango del pisa papas.
+	
+	% Entonces, ¿qué alcanza para definir una rotación en $\R^3$? En criollo pregunto.
+	
+	% [Pausa] ¡El mango!
+\end{frame}
+
+
 \begin{frame}{Por fin, cuaterniones}
 
 	% Bueno, les presento a los cuaterniones y continuamos el jueves.
@@ -302,6 +741,8 @@ Los números complejos:
 
 
 
+\iffalse
+
 \begin{frame}{¡Cuidado!}
 Ojo: El producto de cuaterniones en general no es conmutativo.
 
@@ -318,5 +759,7 @@ Ojo: El producto de cuaterniones en general no es conmutativo.
 	
 	% Esto ya nos da una primer diferencia con $\R^2$
 \end{frame}
+
+\fi
 
 \end{document}
