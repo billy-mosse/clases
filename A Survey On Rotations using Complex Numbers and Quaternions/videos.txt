@@ -1,0 +1,8 @@
+https://www.youtube.com/watch?v=syQnn_xuB8U&t=61s Axis Angle/Euler Angles
+
+https://www.youtube.com/watch?v=4mXL751ko0w&feature=youtu.be
+Un poco de Euler Angles vs Quaternions y mucho de intuición de Quaternions. En particular tiene una intuición sobre por qué se duplica el ángulo en 8:12 que terminé no contando.
+
+
+https://www.youtube.com/watch?v=3BR8tK-LuB0
+Video lindo de quats pero es más motivacional que otra cosa

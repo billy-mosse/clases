@@ -1,0 +1,1810 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>On Quaternions and Octonions, by John Conway and Derek Smith</title>
+<meta name="description" content="On Quaternions and Octonions, by
+John Conway and Derek Smith">
+<meta name="keywords" content="conway">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2002-2-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/conway.css">
+
+<link rel="next" href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html">
+<link rel="up" href="http://math.ucr.edu/home/baez/octonions/index.html">
+<link rel="previous" href="http://math.ucr.edu/home/baez/octonions/node24.html">
+</head>
+
+<body bgcolor="#FFFFFF">
+<b> Next:</b> <a name="tex2html2" href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html">Bibliography</a>
+<b> Up:</b> <a href="http://math.ucr.edu/home/baez/octonions/index.html">The Octonions</a>
+<b> Previous:</b> <a href="http://math.ucr.edu/home/baez/octonions/node24.html">Brougham Bridge</a>
+
+<br>
+<br>
+<!--End of Navigation Panel-->
+
+<p>
+</p><div align="CENTER">
+<b>
+<em>On Quaternions and Octonions:
+Their Geometry, Arithmetic, and Symmetry</em>
+<br>
+by John H. Conway and Derek A. Smith
+<br></b> <br>
+<div align="center">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/conway_smith.jpg" width="125" height="190">
+</div>
+<p>
+        <em>review by John C. Baez
+<br></em> <br> 
+<font size="-1">Department of Mathematics <br>
+University of California <br>
+Riverside CA 92521 
+</font></p><p><font size="-1">
+August 12, 2004
+</font>
+<br>
+
+<br>
+<font size="-1">
+Published in 
+<a href="http://www.ams.org/bull/2005-42-02/S0273-0979-05-01043-8/home.html">Bull. Amer. Math. Soc. <b>42</b> (2005), 229-243.</a>
+</font></p><p><font size="-1">
+Also available in <a href="http://math.ucr.edu/home/baez/octonions/conway_smith/conway_smith.ps">Postscript</a>
+and <a href="http://math.ucr.edu/home/baez/octonions/conway_smith/conway_smith.pdf">PDF</a> formats
+</font>
+</p></div>
+
+<p>
+Conway and Smith's book is a wonderful introduction to the normed
+division algebras: the real numbers (<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img1.gif" alt="${\mathbb{R}}$" width="15" height="14" border="0" align="BOTTOM">), the complex numbers
+(<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img2.gif" alt="${\mathbb{C}}$" width="15" height="14" border="0" align="BOTTOM">), the quaternions (<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img3.gif" alt="$\H $" width="15" height="14" border="0" align="BOTTOM">), and the octonions (<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img4.gif" alt="$\O $" width="15" height="30" border="0" align="MIDDLE">).  The first two
+are well-known to every mathematician.  In constrast, the quaternions
+and especially the octonions are sadly neglected, so the authors
+rightly concentrate on these.  They develop these number systems from
+scratch, explore their connections to geometry, and even study <i>number theory</i> in quaternionic and octonionic versions of the
+integers.
+
+</p><p>
+Conway and Smith warm up by studying two famous subrings
+of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img2.gif" alt="${\mathbb{C}}$" width="15" height="14" border="0" align="BOTTOM">: the Gaussian integers and Eisenstein integers.  The Gaussian 
+integers are the complex numbers <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img5.gif" alt="$x + iy$" width="45" height="29" border="0" align="MIDDLE"> for which <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img6.gif" alt="$x$" width="12" height="13" border="0" align="BOTTOM"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img7.gif" alt="$y$" width="11" height="29" border="0" align="MIDDLE"> are 
+integers.  They form a square lattice:
+
+</p><p>
+
+</p><p>
+<br>
+</p><div align="CENTER">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/gaussian.gif"><table>
+
+</table>
+</div>
+                                                                                
+
+
+
+<p>
+<br>
+
+</p><p>
+Any Gaussian integer can be uniquely factored into 'prime'
+Gaussian integers — at least if we count differently ordered 
+factorizations as the same, and ignore the ambiguity introduced by 
+the invertible Gaussian integers, namely <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img8.gif" alt="$\pm 1$" width="23" height="29" border="0" align="MIDDLE"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img9.gif" alt="$\pm i$" width="21" height="29" border="0" align="MIDDLE">.  To 
+show this, we can use a straightforward generalization of Euclid's proof 
+for ordinary integers.  The key step is to show that given nonzero Gaussian 
+integers <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img10.gif" alt="$a$" width="11" height="13" border="0" align="BOTTOM"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img11.gif" alt="$b$" width="10" height="14" border="0" align="BOTTOM">, we can always write
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+a = nb + r
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img12.gif" alt="\begin{displaymath}a = nb + r \end{displaymath}" width="71" height="25" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+for some Gaussian integers <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img13.gif" alt="$n$" width="13" height="13" border="0" align="BOTTOM"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img14.gif" alt="$r$" width="11" height="13" border="0" align="BOTTOM">, where the 'remainder'
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img14.gif" alt="$r$" width="11" height="13" border="0" align="BOTTOM"> has
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+|r| < |b|  .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img15.gif" alt="\begin{displaymath}\vert r\vert &lt; \vert b\vert .\end{displaymath}" width="54" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+This is equivalent to showing that we can find a Gaussian
+integer <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img13.gif" alt="$n$" width="13" height="13" border="0" align="BOTTOM"> with
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+|a/b - n| < 1  .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img16.gif" alt="\begin{displaymath}\vert a/b - n\vert &lt; 1 .\end{displaymath}" width="91" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+And this is true, because <i>no point in the complex plane 
+has distance <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img17.gif" alt="$\ge 1$" width="28" height="29" border="0" align="MIDDLE"> to the nearest Gaussian integer</i>.  
+
+<p>
+Similarly, the Eisenstein integers are complex numbers of the form
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img18.gif" alt="$x + \omega y$" width="50" height="29" border="0" align="MIDDLE"> where <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img6.gif" alt="$x$" width="12" height="13" border="0" align="BOTTOM"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img7.gif" alt="$y$" width="11" height="29" border="0" align="MIDDLE"> are integers and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img19.gif" alt="$\omega$" width="14" height="13" border="0" align="BOTTOM"> 
+is a nontrivial cube root of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img20.gif" alt="$1$" width="11" height="13" border="0" align="BOTTOM">.   These form 
+a lattice with hexagonal symmetry:
+
+</p><p>
+
+</p><p>
+<br>
+</p><div align="CENTER">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/eisenstein.gif"><table>
+
+</table>
+</div>
+<p>
+<br>
+
+
+</p><p>
+<br>
+
+</p><p>
+Again one can prove unique factorization up to reordering and units, 
+using the fact that no point in the complex plane has distance <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img17.gif" alt="$\ge 1$" width="28" height="29" border="0" align="MIDDLE"> 
+to the nearest Eisenstein integer.  
+
+</p><p>
+To see the importance of this condition, consider the 'Kummer integers': 
+numbers of the form <!-- MATH
+ $x + \sqrt{-5}y$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img21.gif" alt="$x + \sqrt{-5}y$" width="74" height="36" border="0" align="MIDDLE"> where <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img6.gif" alt="$x$" width="12" height="13" border="0" align="BOTTOM"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img7.gif" alt="$y$" width="11" height="29" border="0" align="MIDDLE"> are integers.  
+If we draw an open ball of radius <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img22.gif" alt="$1/2$" width="27" height="32" border="0" align="MIDDLE"> about each Kummer integer, 
+there is still room for more disjoint open balls of this radius:
+
+</p><p>
+
+    
+</p><p>
+<br>
+</p><div align="CENTER">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/kummer.gif"><table>
+
+</table>
+</div>
+<p>
+<br>
+
+
+</p><p>
+Thus there exist points in the complex plane with distance <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img17.gif" alt="$\ge 1$" width="28" height="29" border="0" align="MIDDLE"> 
+from the nearest Kummer integer, so Euclid's proof of unique
+prime factorization fails — and so does unique prime factorization:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+2 \cdot 3 = 6 = (1 + \sqrt{-5})(1 - \sqrt{-5})  .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img23.gif" alt="\begin{displaymath}2 \cdot 3 = 6 = (1 + \sqrt{-5})(1 - \sqrt{-5}) .\end{displaymath}" width="227" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+
+<p>
+In short, there is an interesting relation between number theory and
+a subject on which Conway is an expert: densely packed lattices
+[<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#ConwaySloane">5</a>].  For a lattice in a normed division algebra to
+be closed under multiplication, all its points must have 
+distance <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img17.gif" alt="$\ge 1$" width="28" height="29" border="0" align="MIDDLE"> from each other: otherwise the smallest element of 
+nonzero norm, say <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img24.gif" alt="$z$" width="11" height="13" border="0" align="BOTTOM">, would have <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img25.gif" alt="$\vert z\vert &lt; 1$" width="49" height="32" border="0" align="MIDDLE"> and thus <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img26.gif" alt="$\vert z^2\vert &lt; \vert z\vert$" width="65" height="34" border="0" align="MIDDLE"> — 
+a contradiction!   On the other hand, for the Euclidean algorithm to 
+work, at least in the simple form described here, there must be no point 
+in the plane with distance <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img17.gif" alt="$\ge 1$" width="28" height="29" border="0" align="MIDDLE"> from the nearest lattice point.  
+So for both of these to hold, our lattice must be 'well packed': 
+if we place open balls of radius <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img22.gif" alt="$1/2$" width="27" height="32" border="0" align="MIDDLE"> centered at all the lattice 
+points, they must be disjoint, but they must not leave room for any 
+more disjoint open balls of this radius.  
+
+</p><p>
+When it comes to subrings of the <i>complex</i> numbers, these ideas
+are well-known.  Back in the 1890's, Minkowski used them to study
+unique prime factorization (or more generally, ideal class groups) not
+only for algebraic integers in quadratic number fields, as we have
+secretly been doing here, but also in other number fields, which
+require lattices in higher dimensions.  He called this subject 'the
+geometry of numbers' [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Cassels">4</a>,<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#GL">11</a>,<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Siegel">16</a>].  Conway and Smith 
+explore a lesser-known aspect of the geometry of numbers by applying 
+it to subrings of the quaternions and octonions.  But they cannot 
+resist a little preliminary detour into the geometry of lattices in 
+2 dimensions — nor should we.
+
+</p><p>
+The Gaussian and Eisenstein integers are the most symmetrical lattices
+in the plane, since they have 4-fold and 6-fold rotational symmetry,
+respectively.  As such, they naturally turn up in the classification 
+of 2-dimensional space groups.  A 'space group' is a subgroup of the
+Euclidean group (the group of transformations of <!-- MATH
+ ${\mathbb{R}}^n$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img27.gif" alt="${\mathbb{R}}^n$" width="23" height="14" border="0" align="BOTTOM"> generated by
+rotations, reflections and translations) that acts transitively on a
+lattice.  Up to isomorphism, there are 230 space groups in 3
+dimensions.  These act as symmetries of various kinds of crystals, so
+they form a useful classification scheme in crystallography --
+perhaps the most easily understood application of group theory to
+physics.  In 2 dimensions, there are just 17 isomorphism classes of
+space groups.  These are also called 'wallpaper groups', since they act
+as symmetries of different wallpaper patterns.  Conway and Smith
+describe all these groups.  Two of them act on a lattice with the
+least amount of symmetry:
+
+</p><p>
+<br>
+</p><div align="CENTER">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/parallelogram.gif"><table>
+
+</table>
+</div>
+<p>
+<br>
+                                                                                
+
+</p><p>
+Seven act on a lattice with rectangular symmetry:
+
+</p><p>
+<br>
+</p><div align="CENTER">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/rectangular.gif"><table>
+
+</table>
+</div>
+<p>
+<br>
+
+</p><p>
+or alternatively, on one with rhombic symmetry.
+Three act on a lattice with square symmetry, and 
+five act on a lattice with hexagonal symmetry.  
+
+</p><p>
+After this low-dimensional warmup, Conway and Smith's book turns to
+the quaternions and their applications to geometry.  The quaternions
+were discovered by Sir William Rowan Hamilton in 1843.  Fascinated by
+the applications of complex numbers to 2d geometry, he had been
+struggling unsuccessfully for many years to invent a bigger algebra
+that would do something similar for 3d geometry.  In modern language,
+it seems he was looking for a 3-dimensional normed division algebra.
+Unfortunately, no such thing exists!  Finally, on October 16th, while
+walking with his wife along the Royal Canal to a meeting of the Royal
+Irish Academy in Dublin, he discovered a <i>4-dimensional</i> normed
+division algebra.  In his own words, "I then and there felt the
+galvanic circuit of thought close; and the sparks which fell from it
+were the fundamental equations between <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img28.gif" alt="$i, j, k$" width="38" height="30" border="0" align="MIDDLE">; exactly such as I
+have used them ever since."  He was so excited that he carved these
+equations on the soft stone wall of Brougham Bridge.
+
+</p><p>
+Hamilton's original inscription has long since been covered by other
+graffiti, though a plaque remains to commemorate the event.  The
+quaternions, which in the late 1800's were a mandatory examination
+topic in Dublin and the only advanced mathematics taught in some
+American universities, have now sunk into obscurity.  The reason is
+that the geometry and physics which Hamilton and his followers did
+with quaternions is now mostly done using the dot product and cross
+product of vectors, invented by Gibbs in the 1880's [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Crowe">7</a>].
+Scott Kim's charming sepia-toned cover art for this book nicely
+captures the 'old-fashioned' flavor of some work on quaternions.  But the
+quaternions are also crucial to some distinctly modern mathematics and
+physics.
+
+</p><p>
+As a vector space, the quaternions are
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\H = \{ a + bi + cj + dk \; \colon \; a,b,c,d \in {\mathbb{R}}\} .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img29.gif" alt="\begin{displaymath}\H = \{ a + bi + cj + dk \; \colon \; a,b,c,d \in {\mathbb{R}}\} . \end{displaymath}" width="262" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+They become an associative algebra with 1 as the 
+multiplicative unit via:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+i^2 = j^2 = k^2 = -1,
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img30.gif" alt="\begin{displaymath}i^2 = j^2 = k^2 = -1, \end{displaymath}" width="131" height="27" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+ij = k = -ji   {\rm\; and \; cyclic \; permutations}.
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img31.gif" alt="\begin{displaymath}ij = k = -ji {\rm\; and \; cyclic \; permutations}.\end{displaymath}" width="262" height="27" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+Copying what works for complex numbers, we define the 'conjugate' of a
+quaternion <!-- MATH
+ $q = a + bi + cj + dk$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img32.gif" alt="$q = a + bi + cj + dk$" width="142" height="30" border="0" align="MIDDLE"> to be <!-- MATH
+ $\overline{q} = a - bi - cj - dk$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img33.gif" alt="$\overline{q} = a - bi - cj - dk$" width="142" height="30" border="0" align="MIDDLE">, 
+and define its 'real part' to be <!-- MATH
+ ${\rm Re}(q) = a$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img34.gif" alt="${\rm Re}(q) = a$" width="71" height="32" border="0" align="MIDDLE">.   It is then easy to check that
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+q \overline{q} = \overline{q} q = a^2 + b^2 + c^2 + d^2 .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img35.gif" alt="\begin{displaymath}q \overline{q} = \overline{q} q = a^2 + b^2 + c^2 + d^2 .\end{displaymath}" width="193" height="27" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+This suggests defining a norm by <!-- MATH
+ $|q|^2 = q \overline{q}$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img36.gif" alt="$\vert q\vert^2 = q \overline{q}$" width="63" height="34" border="0" align="MIDDLE">,  
+and it then turns out that the quaternions are a normed division 
+algebra:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+|qq'| = |q| |q'| .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img37.gif" alt="\begin{displaymath}\vert qq'\vert = \vert q\vert \vert q'\vert . \end{displaymath}" width="88" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+In particular, any nonzero quaternion has
+a two-sided multiplicative inverse given by
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+q^{-1} = \overline{q} / |q|^2 .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img38.gif" alt="\begin{displaymath}q^{-1} = \overline{q} / \vert q\vert^2 .\end{displaymath}" width="87" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+
+<p>
+It follows that the quaternions of norm 1 form a group under 
+multiplication.  This group is usually called <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img39.gif" alt="${\rm SU}(2)$" width="44" height="32" border="0" align="MIDDLE">, because people 
+think of its elements as <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img40.gif" alt="$2 \times 2$" width="38" height="29" border="0" align="MIDDLE"> unitary matrices with determinant 
+1.  However, the quaternionic viewpoint is better adapted to seeing how 
+this group describes rotations in 3 and 4 dimensions.  The unit 
+quaternions act via conjugation as rotations of the 3d space of 'pure 
+imaginary' quaternions, namely those with <!-- MATH
+ ${\rm Re}(q) = 0$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img41.gif" alt="${\rm Re}(q) = 0$" width="71" height="32" border="0" align="MIDDLE">.  This gives
+a homomorphism from <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img39.gif" alt="${\rm SU}(2)$" width="44" height="32" border="0" align="MIDDLE"> onto the 3d rotation group <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img42.gif" alt="${\rm SO}(3)$" width="45" height="32" border="0" align="MIDDLE">. 
+The kernel of this homomorphism is <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img43.gif" alt="$\{ \pm 1 \}$" width="39" height="32" border="0" align="MIDDLE">, so we see 
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img39.gif" alt="${\rm SU}(2)$" width="44" height="32" border="0" align="MIDDLE"> is a double cover of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img42.gif" alt="${\rm SO}(3)$" width="45" height="32" border="0" align="MIDDLE">.   The unit quaternions also 
+act via left and right multiplication as rotations of the 4d space 
+of all quaternions.  This gives a homomorphism from <!-- MATH
+ ${\rm SU}(2) \times {\rm SU}(2)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img44.gif" alt="${\rm SU}(2) \times {\rm SU}(2)$" width="105" height="32" border="0" align="MIDDLE">
+onto the 4d rotation group <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img45.gif" alt="${\rm SO}(4)$" width="45" height="32" border="0" align="MIDDLE">.  The kernel of this homomorphism 
+is <!-- MATH
+ $\{ \pm (1,1) \}$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img46.gif" alt="$\{ \pm (1,1) \}$" width="67" height="32" border="0" align="MIDDLE">, so we see <!-- MATH
+ ${\rm SU}(2) \times {\rm SU}(2)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img44.gif" alt="${\rm SU}(2) \times {\rm SU}(2)$" width="105" height="32" border="0" align="MIDDLE"> is a double 
+cover of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img45.gif" alt="${\rm SO}(4)$" width="45" height="32" border="0" align="MIDDLE">.  
+
+</p><p>
+These facts are incredibly important throughout mathematics and
+physics.  With their help, Conway and Smith classify the finite
+subgroups of the 3d rotation group <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img42.gif" alt="${\rm SO}(3)$" width="45" height="32" border="0" align="MIDDLE">, its double cover
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img39.gif" alt="${\rm SU}(2)$" width="44" height="32" border="0" align="MIDDLE">, the 3d rotation/reflection group <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img47.gif" alt="${\rm O}(3)$" width="36" height="32" border="0" align="MIDDLE">, and the 4d
+rotation group <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img45.gif" alt="${\rm SO}(4)$" width="45" height="32" border="0" align="MIDDLE">.  These classifications are all in principle
+`well known'.  However, they seem hard to find in one place, so Conway
+and Smith's elegant treatment is very helpful.
+
+</p><p>
+Next, Conway and Smith turn to quaternionic number theory.  The obvious
+analogue of the Gaussian integers are the 'Lipschitz integers', namely 
+quaternions of the form <!-- MATH
+ $a + bi + cj + dk$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img48.gif" alt="$a + bi + cj + dk$" width="114" height="30" border="0" align="MIDDLE"> where 
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img49.gif" alt="$a,b,c,d$" width="55" height="30" border="0" align="MIDDLE"> are all integers.  The Lipschitz integers
+are a subring of the quaternions, and this has a nice application 
+to ordinary number theory.  Applying the formula <!-- MATH
+ $|zz'| = |z||z'|$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img50.gif" alt="$\vert zz'\vert = \vert z\vert\vert z'\vert$" width="92" height="32" border="0" align="MIDDLE">
+to the product of two Gaussian integers gives the famous 'two squares 
+formula':
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+(x^2 + y^2)(x'^2 + y'^2) = (xx' - yy')^2 + (xy' + yx')^2
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img51.gif" alt="\begin{displaymath}(x^2 + y^2)(x'^2 + y'^2) = (xx' - yy')^2 + (xy' + yx')^2 \end{displaymath}" width="338" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+which shows that the set of integers expressible as the sum of
+two squares is closed under multiplication.  Similarly, taking the 
+norm of the product of two Lipschitz integers gives a
+`four squares formula'.  This shows the set of integers expressible
+as the sum of four squares is closed under multiplication.  This fact
+is less impressive than it might at first sound, since one can prove
+that <i>all</i> integers can be written as the sum of four squares — 
+but the four-square formula reduces the task of proving this to the
+case of prime numbers.  
+
+<p>
+Alas, the Lipschitz integers are not well packed, so their 
+factorization into Lipschitz primes is far from unique.  This 
+was noted already by Lipschitz himself [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Fenster">8</a>].
+For example:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+(1 + i)(1 - i) = 2 = (1 + j)(1 - j).
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img52.gif" alt="\begin{displaymath}(1 + i)(1 - i) = 2 = (1 + j)(1 - j). \end{displaymath}" width="236" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+However, it is easy to correct this problem.  Consider the cubical lattice
+of all points with integer coordinates in <!-- MATH
+ ${\mathbb{R}}^n$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img27.gif" alt="${\mathbb{R}}^n$" width="23" height="14" border="0" align="BOTTOM">.  To make the distance 
+to the nearest lattice point as big as possible, we can go to any point 
+with all half-integer coordinates.  The distance to the nearest lattice 
+point is then
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\textstyle{
+\sqrt{\left(\frac{1}{2}\right)^2 + \cdots + \left(\frac{1}{2}\right)^2 }} = 
+\sqrt{n/4} .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img53.gif" alt="\begin{displaymath}
+\textstyle{
+\sqrt{\left(\frac{1}{2}\right)^2 + \cdots + \left(\frac{1}{2}\right)^2 }} =
+\sqrt{n/4} .
+\end{displaymath}" width="202" height="36" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+This gets arbitrarily large as <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img13.gif" alt="$n$" width="13" height="13" border="0" align="BOTTOM"> increases — so in high dimensions
+we could pack space with a cubical lattice of steel balls with half-inch 
+radius snugly touching each other, but still leave places light-years 
+away from metal.
+
+<p>
+More to the point, the distance <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img54.gif" alt="$\sqrt{n/4}$" width="44" height="38" border="0" align="MIDDLE"> reaches <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img20.gif" alt="$1$" width="11" height="13" border="0" align="BOTTOM"> precisely in
+dimension <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img55.gif" alt="$4$" width="11" height="13" border="0" align="BOTTOM"> — the case we are interested in.  So, if we place open
+balls of radius <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img22.gif" alt="$1/2$" width="27" height="32" border="0" align="MIDDLE"> centered at the Lipschitz integers, there is
+still room to slip in a translated copy of this lattice of balls
+centered at quaternions <!-- MATH
+ $a + bi + cj + dk$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img48.gif" alt="$a + bi + cj + dk$" width="114" height="30" border="0" align="MIDDLE"> where <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img49.gif" alt="$a,b,c,d$" width="55" height="30" border="0" align="MIDDLE"> are
+half-integers.  This gives the 'Hurwitz integers': quaternions of the
+form <!-- MATH
+ $a + bi + cj + dk$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img48.gif" alt="$a + bi + cj + dk$" width="114" height="30" border="0" align="MIDDLE"> where <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img49.gif" alt="$a,b,c,d$" width="55" height="30" border="0" align="MIDDLE"> are either all integers or all
+integers plus <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img22.gif" alt="$1/2$" width="27" height="32" border="0" align="MIDDLE">.
+
+</p><p>
+The Hurwitz integers are a well-packed lattice and also a subring
+of the quaternions.  This lets Conway and Sloane prove a version of 
+unique prime factorization for Hurwitz integers.  To state this
+result, they restrict attention to 'primitive' Hurwitz integers, namely
+those that are not divisible by any natural number.  They show that
+for any primitive Hurwitz integer <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img56.gif" alt="$Q$" width="16" height="30" border="0" align="MIDDLE"> and any factorization of 
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img57.gif" alt="$\vert Q\vert^2$" width="32" height="34" border="0" align="MIDDLE"> into a product <!-- MATH
+ $p_0 p_1 \cdots p_k$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img58.gif" alt="$p_0 p_1 \cdots p_k$" width="73" height="29" border="0" align="MIDDLE"> of ordinary prime
+numbers, there is a factorization
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+Q = P_0 P_1 \cdots P_k
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img59.gif" alt="\begin{displaymath}
+Q = P_0 P_1 \cdots P_k
+\end{displaymath}" width="109" height="27" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img56.gif" alt="$Q$" width="16" height="30" border="0" align="MIDDLE"> into a product of Hurwitz primes with <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img60.gif" alt="$\vert P_i\vert^2 = p_i$" width="69" height="34" border="0" align="MIDDLE">.
+Moreover, given any factorization with this property, all 
+the other factorizations with this property are of the form
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+Q = (P_0U_1) (U_1^{-1}P_1U_2) \cdots (U_k^{-1}P_k)
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img61.gif" alt="\begin{displaymath}
+Q = (P_0U_1) (U_1^{-1}P_1U_2) \cdots (U_k^{-1}P_k)
+\end{displaymath}" width="242" height="29" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+where the <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img62.gif" alt="$U_i$" width="19" height="30" border="0" align="MIDDLE"> are Hurwitz integers of norm 1 --
+of which there are precisely 24, as we shall soon see.  
+Conway and Smith call this 'uniqueness up to unit-migration'.  
+For example, these two factorizations are not the same up to 
+unit-migration if we work in the Lipschitz integers:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+(1 + i)(1 - i) = 2 = (1 + j)(1 - j)
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img63.gif" alt="\begin{displaymath}(1 + i)(1 - i) = 2 = (1 + j)(1 - j) \end{displaymath}" width="232" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+but they become so in the Hurwitz integers, since we have
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+(1 + i)U = (1 + j), \qquad U^{-1}(1 - i) = (1 - j)
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img64.gif" alt="\begin{displaymath}(1 + i)U = (1 + j), \qquad U^{-1}(1 - i) = (1 - j) \end{displaymath}" width="306" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+where <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img65.gif" alt="$U$" width="16" height="14" border="0" align="BOTTOM"> is a Hurwitz integer of norm 1, namely 
+<!-- MATH
+ $\frac{1}{2}(1 - i + j - k)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img66.gif" alt="$\frac{1}{2}(1 - i + j - k)$" width="114" height="35" border="0" align="MIDDLE">.
+
+<p>
+The Hurwitz integers are so beautiful that we should pause and
+admire them before following Conway and Smith to higher dimensions.
+Though it is far from obvious, they give the densest 
+possible lattice packing of balls in 4 dimensions [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#ConwaySloane">5</a>].
+In this setup, each ball touches 24 others.  For example, the ball 
+centered at the origin touches the balls centered at 
+Hurwitz integers of norm 1.  There are 8 of these with integer coordinates:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\pm 1, \; \pm i, \; \pm j, \; \pm k,
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img67.gif" alt="\begin{displaymath}\pm 1, \; \pm i, \; \pm j, \; \pm k, \end{displaymath}" width="116" height="27" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+and 16 with half-integer coordinates:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{1}{2}(\pm 1 \pm i \pm j \pm k )  .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img68.gif" alt="\begin{displaymath}\frac{1}{2}(\pm 1 \pm i \pm j \pm k ) .\end{displaymath}" width="126" height="38" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+The 8 with integer coordinates form the vertices of a 
+cross-polytope (the 4d analogue of an octahedron):
+<p>
+
+</p><p>
+<br>
+</p><div align="CENTER">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/cross_polytope.jpg"><table>
+
+</table>
+</div>
+<p>
+<br>
+
+</p><p>
+while the 16 with half-integer coordinates form the vertices
+of a hypercube (the 4d analogue of a cube):
+
+</p><p>
+
+</p><p>
+<br>
+</p><div align="CENTER">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/hypercube.jpg"><table>
+
+</table>
+</div>
+<p>
+<br>
+
+
+</p><p>
+<br>
+
+</p><p>
+Taken together, they form the vertices of a
+regular polytope called the '24-cell':
+
+</p><p>
+
+</p><p>
+<br>
+</p><div align="CENTER">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/24_cell.jpg"><table>
+
+</table>
+</div>
+<p>
+<br>
+    
+
+
+</p><p>
+All but one of the regular polytopes in 4 dimensions are analogues of
+Platonic solids in 3 dimensions; the exception is the 24-cell.  The 
+picture above is a bit too cluttered to reveal all the charms of this 
+entity.  It is helpful to look at 3-dimensional slices:
+
+</p><p>
+</p><p>
+<br>
+</p><div align="CENTER">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/24_cell_sliced.gif" width="400" height="600" border="0"><table>
+
+</table>
+</div>
+<p>
+<br>
+
+
+</p><p>
+The thin dashed lines show one of the faces of the 24-cell: though
+distorted in this picture, it is really a regular octahedron.
+Since the hypercube is dual to the cross-polytope, the 24-cell is 
+self-dual — so it has 24 of these octahedral faces, and if we draw
+a dot in the middle of each one, we get the vertices of another 24-cell.
+
+</p><p>
+There is much more to say in favor of the 24-cell.  It is not only a
+regular polytope; it is also a group!  More precisely, its vertices
+form a 24-element subgroup of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img39.gif" alt="${\rm SU}(2)$" width="44" height="32" border="0" align="MIDDLE">.  This is usually called the
+`binary tetrahedral group', since it is a double cover of the
+rotational symmetry group of the tetrahedron.  This group also goes by
+the name of <!-- MATH
+ ${\rm SL}(2,{\mathbb{Z}}/3)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img69.gif" alt="${\rm SL}(2,{\mathbb{Z}}/3)$" width="76" height="32" border="0" align="MIDDLE">: <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img40.gif" alt="$2 \times 2$" width="38" height="29" border="0" align="MIDDLE"> matrices with determinant 1
+having entries in the integers modulo 3.  In this guise it explains
+some of the mystical importance of the number 24 in bosonic string
+theory [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Waldschmidt">18</a>].
+
+</p><p>
+It would be enjoyable to spend more time delving into these matters,
+but alas, this review is not the proper place.  Instead, we should
+move on to the octonions.  These were first discovered by Hamilton's
+college friend John Graves.  It had been Graves' interest in algebra
+that got Hamilton thinking about complex numbers and their
+generalizations in the first place.  The day after discovering the
+quaternions, Hamilton sent a letter describing them to Graves.  The
+day after Christmas on that same year, Graves wrote to Hamilton
+describing an 8-dimensional algebra which he called the 'octaves'.  He
+showed that they were a normed division algebra, and used this to
+express the product of two sums of eight squares as another sum of
+eight squares: the 'eight squares theorem'.  Hamilton offered to
+publicize Graves' discovery, but kept putting it off, absorbed in work
+on the quaternions.  Eventually Arthur Cayley rediscovered them and
+published an article announcing their existence in 1845.  For this
+reason they are sometimes called 'Cayley numbers' — but these days,
+all right-thinking people call them the 'octonions'.  
+
+</p><p>
+As a vector space, the octonions are
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\O = \{  a_0 + \sum_{i = 1}^7 a_i e_i \; \colon \;
+               a_0, \dots, a_7 \in {\mathbb{R}}\}  .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img70.gif" alt="\begin{displaymath}\O = \{ a_0 + \sum_{i = 1}^7 a_i e_i \; \colon \;
+a_0, \dots, a_7 \in {\mathbb{R}}\} .\end{displaymath}" width="253" height="55" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+We make them into a nonassociative algebra with <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img20.gif" alt="$1$" width="11" height="13" border="0" align="BOTTOM"> as multiplicative
+unit using a gadget called the 'Fano plane':
+
+<p>
+
+</p><p>
+<br>
+</p><div align="CENTER">
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/fano.jpg"><table>
+
+</table>
+</div>
+<p>
+<br>
+
+
+</p><p>
+There are 7 points and 7 lines in this picture, if we count the circle 
+containing <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img71.gif" alt="$e_1,e_2,e_4$" width="61" height="29" border="0" align="MIDDLE"> as an honorary 'line'.  Each line contains
+3 points, and each of these triples is equipped with a cyclic order as 
+indicated by the arrows.  The rule is that if <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img72.gif" alt="$e_i, e_j, e_k$" width="59" height="29" border="0" align="MIDDLE"> are
+cyclically ordered in this way, they satisfy:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+e_i^2 = e_j^2 = e_k^2 = -1,
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img73.gif" alt="\begin{displaymath}e_i^2 = e_j^2 = e_k^2 = -1, \end{displaymath}" width="131" height="30" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+e_i e_j = e_k = -e_j e_i   {\rm\; and \; cyclic \; permutations}.
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img74.gif" alt="\begin{displaymath}e_i e_j = e_k = -e_j e_i {\rm\; and \; cyclic \; permutations}.\end{displaymath}" width="295" height="29" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+Thus, they give a copy of the quaternions inside the octonions.
+
+<p>
+Copying what worked for the quaternions, we define the 'conjugate' of 
+an octonion <!-- MATH
+ $a = a_0 + \sum_{i=1}^7 a_i e_i$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img75.gif" alt="$a = a_0 + \sum_{i=1}^7 a_i e_i$" width="135" height="39" border="0" align="MIDDLE"> to be 
+<!-- MATH
+ $\overline{a} = a_0 - \sum_{i=1}^7 a_i e_i$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img76.gif" alt="$\overline{a} = a_0 - \sum_{i=1}^7 a_i e_i$" width="135" height="39" border="0" align="MIDDLE">,  
+and define its 'real part' to be <!-- MATH
+ ${\rm Re}(a) = a_0$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img77.gif" alt="${\rm Re}(a) = a_0$" width="79" height="32" border="0" align="MIDDLE">. 
+It is then easy to check that
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+a \overline{a} = \overline{a} a = \sum_{i=0}^7 a_i^2 ,
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img78.gif" alt="\begin{displaymath}a \overline{a} = \overline{a} a = \sum_{i=0}^7 a_i^2 ,\end{displaymath}" width="120" height="55" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+so we can define a norm by <!-- MATH
+ $|a|^2 = a \overline{a}$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img79.gif" alt="$\vert a\vert^2 = a \overline{a}$" width="65" height="34" border="0" align="MIDDLE">.
+This makes the octonions into a normed division algebra:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+|aa'| = |a| |a'| ,
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img80.gif" alt="\begin{displaymath}\vert aa'\vert = \vert a\vert \vert a'\vert , \end{displaymath}" width="92" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+and any nonzero octonion has
+a two-sided inverse given by
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+a^{-1} = \overline{a} / |a|^2 .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img81.gif" alt="\begin{displaymath}a^{-1} = \overline{a} / \vert a\vert^2 .\end{displaymath}" width="89" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+A brute-force verification of these last facts is unpleasant, in part
+because the octonions are nonassociative.  It is also not
+very enlightening.  Conway and Smith wisely use the 'Cayley-Dickson
+construction' instead.  This is a dimension-doubling procedure that
+produces <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img2.gif" alt="${\mathbb{C}}$" width="15" height="14" border="0" align="BOTTOM"> from <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img1.gif" alt="${\mathbb{R}}$" width="15" height="14" border="0" align="BOTTOM">, <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img3.gif" alt="$\H $" width="15" height="14" border="0" align="BOTTOM"> from <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img2.gif" alt="${\mathbb{C}}$" width="15" height="14" border="0" align="BOTTOM">, and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img4.gif" alt="$\O $" width="15" height="30" border="0" align="MIDDLE"> from <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img3.gif" alt="$\H $" width="15" height="14" border="0" align="BOTTOM">, and
+explains why they are normed division algebras — while also 
+explaining why there are no more.     
+
+<p>
+Conway and Smith then develop the fascinating relationship between 
+octonions and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img82.gif" alt="${\rm Spin}(8)$" width="54" height="32" border="0" align="MIDDLE">, the double cover of the rotation group in 
+8 dimensions.  In physics lingo, the octonions can be described not
+only as the vector representation of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img82.gif" alt="${\rm Spin}(8)$" width="54" height="32" border="0" align="MIDDLE">, but also the left-handed 
+spinor representation and the right-handed spinor representation.  
+This fact is called 'triality'.  It has many amazing spinoffs, 
+including structures like the exceptional Lie groups and
+the exceptional Jordan algebra, and the fact that supersymmetric string 
+theory works best in 10-dimensional spacetime — fundamentally because 
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img83.gif" alt="$8 + 2 = 10$" width="76" height="29" border="0" align="MIDDLE">.  To develop the theory of triality, Conway and Smith make 
+use of Moufang loops and their isotopies — two concepts which never made 
+much sense to me until I saw their lucid treatment.  Anyone interested
+in triality <i>must</i> read this section.
+
+</p><p>
+Next, Conway and Smith tackle octonionic number theory.  Various lattices 
+in <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img4.gif" alt="$\O $" width="15" height="30" border="0" align="MIDDLE"> present themselves as possible octonionic analogues of the integers, 
+but the best candidate is the least obvious.   Starting with the most obvious, 
+the 'Gravesian integers' are octonions of the form
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+a = a_0 + \sum_{i=1}^7 a_i e_i
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img84.gif" alt="\begin{displaymath}a = a_0 + \sum_{i=1}^7 a_i e_i \end{displaymath}" width="115" height="55" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+where all the coefficients <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img85.gif" alt="$a_i$" width="17" height="29" border="0" align="MIDDLE"> are integers.  The 'Kleinian integers'
+are octonions where the <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img85.gif" alt="$a_i$" width="17" height="29" border="0" align="MIDDLE"> are either all integers or 
+all half-integers.   Both these are lattices closed under  
+multiplication — but alas, neither is well-packed.    
+To get a denser lattice, first pick a line in the Fano plane.  Then, take 
+all integral linear combinations of Gravesian integers, octonions of the 
+form
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{1}{2}(\pm 1 \pm e_i \pm e_j \pm e_k)
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img86.gif" alt="\begin{displaymath}\frac{1}{2}(\pm 1 \pm e_i \pm e_j \pm e_k) \end{displaymath}" width="142" height="38" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+where <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img87.gif" alt="$e_i$" width="16" height="29" border="0" align="MIDDLE">, <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img88.gif" alt="$e_j$" width="17" height="29" border="0" align="MIDDLE"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img89.gif" alt="$e_k$" width="18" height="29" border="0" align="MIDDLE"> lie on this line, and those of the form
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{1}{2}( \pm e_p \pm e_q \pm e_r \pm e_s)
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img90.gif" alt="\begin{displaymath}\frac{1}{2}( \pm e_p \pm e_q \pm e_r \pm e_s) \end{displaymath}" width="150" height="38" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+where <!-- MATH
+ $e_p, e_q, e_r, e_s$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img91.gif" alt="$e_p, e_q, e_r, e_s$" width="82" height="29" border="0" align="MIDDLE"> all lie <i>off</i> this line.  The resulting
+lattice is called the 'double Hurwitzian integers'.  Actually we obtain 7 
+isomorphic copies of the double Hurwitzian integers this way, one for 
+each line in the Fano plane.  
+
+<p>
+The double Hurwitzian integers are closed under multiplication, and
+it is easy to see that as a lattice, they are the product of two copies 
+of the Hurwitz integers — hence their name.  In fact, they can be 
+obtained from the Hurwitz integers using the Cayley-Dickson doubling 
+construction.  But unlike the Hurwitz integers, 
+they are not well-packed.   To see this, note that the point 
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{1}{2}(1 + e_i + e_p + e_q)
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img92.gif" alt="\begin{displaymath}\frac{1}{2}(1 + e_i + e_p + e_q) \end{displaymath}" width="130" height="38" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+has distance 1 from all the double Hurwitzian integers.
+
+<p>
+To fix this, we need an even denser lattice closed under
+multiplication.  One natural guess is to take the union of all 7
+copies of the double Hurwitzian integers.  This gives a well-packed
+lattice — and in fact, the densest possible lattice packing of balls
+in 8 dimensions.  In this setup, each ball touches 240 others.  To see
+this, just count the lattice vectors of norm 1.  First, we have <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img93.gif" alt="$\pm
+e_i$" width="28" height="29" border="0" align="MIDDLE"> for <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img94.gif" alt="$i=0, \dots 7$" width="74" height="29" border="0" align="MIDDLE">.  Second, we have <!-- MATH
+ $\frac{1}{2}(\pm 1 \pm e_i
+\pm e_j \pm e_k)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img95.gif" alt="$\frac{1}{2}(\pm 1 \pm e_i
+\pm e_j \pm e_k)$" width="146" height="35" border="0" align="MIDDLE"> where <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img87.gif" alt="$e_i$" width="16" height="29" border="0" align="MIDDLE">, <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img88.gif" alt="$e_j$" width="17" height="29" border="0" align="MIDDLE"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img89.gif" alt="$e_k$" width="18" height="29" border="0" align="MIDDLE"> all lie on some line in
+the Fano plane.  And third, we have <!-- MATH
+ $\frac{1}{2}( \pm e_p \pm e_q \pm
+e_r \pm e_s)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img96.gif" alt="$\frac{1}{2}( \pm e_p \pm e_q \pm
+e_r \pm e_s)$" width="154" height="35" border="0" align="MIDDLE"> where <!-- MATH
+ $e_p, e_q, e_r, e_s$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img91.gif" alt="$e_p, e_q, e_r, e_s$" width="82" height="29" border="0" align="MIDDLE"> all lie off some line.  There
+are <!-- MATH
+ $2 \times 8 = 16$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img97.gif" alt="$2 \times 8 = 16$" width="76" height="29" border="0" align="MIDDLE"> vectors of the first form, <!-- MATH
+ $2^4 \times 7 = 112$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img98.gif" alt="$2^4 \times 7 = 112$" width="91" height="34" border="0" align="MIDDLE">
+of the second form, and <!-- MATH
+ $2^4 \times 7 = 112$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img98.gif" alt="$2^4 \times 7 = 112$" width="91" height="34" border="0" align="MIDDLE"> of the third form, for a
+total of 240.
+
+</p><p>
+Curiously, I had just been thinking about this lattice when Conway and
+Smith's book arrived in my mail.  After checking a couple of cases, I
+had jumped to the conclusion that it is closed under multiplication.
+I was shocked to read that it is not.  But I was comforted to
+hear that this is a common mistake.  Following Coxeter [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Coxeter">6</a>],
+Conway and Smith call it 'Kirmse's mistake', after the first person
+to make it in public.  To rub salt in the wound, they mockingly call
+this lattice the 'Kirmse integers'.
+
+</p><p>
+To fix Kirmse's mistake, you need to perform a curious trick.  Pick a 
+number <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img99.gif" alt="$j$" width="10" height="29" border="0" align="MIDDLE"> from 1 to 7.  Then, take all the Kirmse integers
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+a = a_0 + \sum_{i=1}^7 a_i e_i
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img84.gif" alt="\begin{displaymath}a = a_0 + \sum_{i=1}^7 a_i e_i \end{displaymath}" width="115" height="55" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+and switch the coefficients <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img100.gif" alt="$a_0$" width="19" height="29" border="0" align="MIDDLE"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img101.gif" alt="$a_j$" width="18" height="29" border="0" align="MIDDLE">.   As a lattice, the
+resulting 'Cayley integers' are just a reflected version of the Kirmse 
+integers, so they are still well-packed.  But bizarrely, they are
+now closed under multiplication!
+Since this trick involved an arbitrary choice, there are 7 different 
+copies of the Cayley integers containing the Gravesian integers.  And 
+this is as good as it gets: each one is maximal among lattices closed
+under multiplication.  
+
+<p>
+Conway and Smith then study prime factorization in the Cayley
+integers.  This is a fascinating subject, but even trickier than the
+quaternionic case, since the octonions are nonassociative: one has to
+worry about different parenthesizations, as well as different
+orderings.  So at this point, I will stop trying to explain their
+work, and leave it to them.  Instead, I will say a bit about a topic
+that Conway and Smith skip: how the Hurwitz integers and Cayley
+integers show up in the theory of Lie groups.
+
+</p><p>
+Every compact simple Lie group <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img102.gif" alt="$K$" width="18" height="14" border="0" align="BOTTOM"> has a subgroup that is isomorphic
+to a product of circles and is as big as possible while having this
+property.  Though not unique, this subgroup is unique up to
+conjugation; it is called a 'maximal torus' and denoted <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img103.gif" alt="$T$" width="15" height="14" border="0" align="BOTTOM">.  Since it
+is abelian, it is much easier to study than <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img102.gif" alt="$K$" width="18" height="14" border="0" align="BOTTOM"> itself.  We cannot
+recover <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img102.gif" alt="$K$" width="18" height="14" border="0" align="BOTTOM"> just from this subgroup <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img103.gif" alt="$T$" width="15" height="14" border="0" align="BOTTOM">.  But <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img102.gif" alt="$K$" width="18" height="14" border="0" align="BOTTOM"> has a god-given
+Riemannian metric on it, which restricts to a metric on <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img103.gif" alt="$T$" width="15" height="14" border="0" align="BOTTOM">.  One of
+the miracles of Lie theory is that knowing the group <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img103.gif" alt="$T$" width="15" height="14" border="0" align="BOTTOM"> together
+with this metric on it is enough to determine <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img102.gif" alt="$K$" width="18" height="14" border="0" align="BOTTOM"> up to isomorphism, 
+at least when <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img102.gif" alt="$K$" width="18" height="14" border="0" align="BOTTOM"> is connected.
+
+</p><p>
+We can simplify things even further if we work with the Lie algebra
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM"> of the torus <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img103.gif" alt="$T$" width="15" height="14" border="0" align="BOTTOM">.  Since <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img103.gif" alt="$T$" width="15" height="14" border="0" align="BOTTOM"> is abelian, the bracket on <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM">
+vanishes.  If that were all, <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM"> would be a
+mere vector space.  However, <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM"> also has an inner product coming
+from the Riemannian metric on <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img103.gif" alt="$T$" width="15" height="14" border="0" align="BOTTOM">.   There is also a lattice <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img105.gif" alt="$L$" width="14" height="14" border="0" align="BOTTOM"> in 
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM">, namely the kernel of the exponential map
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\exp \colon \t\rightarrow T .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img106.gif" alt="\begin{displaymath}\exp \colon \t\rightarrow T .\end{displaymath}" width="74" height="27" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+So, <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM"> is really an inner product space with a lattice in it.  From 
+the lattice one can recover the torus <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img107.gif" alt="$T \cong \t /L$" width="60" height="32" border="0" align="MIDDLE">, and from
+the inner product on <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM"> one can recover the metric on this
+torus.  So, we have compressed all the information about <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img102.gif" alt="$K$" width="18" height="14" border="0" align="BOTTOM"> into
+something very simple: an inner product space containing a lattice.
+Not any lattice in an inner product space comes from a 
+compact simple Lie group in this manner.  However, we can work out 
+which ones do — and Hurwitz integers and the Cayley integers <i>do!</i>  
+
+<p>
+In this context, the Hurwitz integers are called the '<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img108.gif" alt="${\rm D}_4$" width="22" height="30" border="0" align="MIDDLE"> lattice', 
+and the corresponding Lie group is <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img82.gif" alt="${\rm Spin}(8)$" width="54" height="32" border="0" align="MIDDLE">, the double cover of the
+rotation group in 8 dimensions.  I already mentioned that this group is 
+closely tied to the octonions via triality.  Now we are seeing its ties 
+to the quaternions!  In this context, triality manifests itself 
+as the symmetry that cyclically permutes the Hurwitz integers 
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img109.gif" alt="$i, j,$" width="27" height="29" border="0" align="MIDDLE"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img110.gif" alt="$k$" width="12" height="14" border="0" align="BOTTOM">.
+
+</p><p>
+Similarly, in this context the Cayley integers are called the '<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE">
+lattice'.  The corresponding group is also called <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE">.  It is the
+biggest of the 5 exceptional cases that show up in the classification
+of compact simple Lie groups.  In order of increasing
+dimension, these are called <!-- MATH
+ ${\rm G}_2, {\rm F}_4, {\rm E}_6, {\rm E}_7$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img112.gif" alt="${\rm G}_2, {\rm F}_4, {\rm E}_6, {\rm E}_7$" width="97" height="30" border="0" align="MIDDLE"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> --
+where the subscript gives the dimension of the maximal torus. 
+They are all connected to the octonions, and they all play a role in 
+string theory.  In some ways <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> is the most mysterious, because
+its smallest nontrivial representation is the 'adjoint representation', 
+in which it acts by conjugation on its own Lie algebra.  Since <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> 
+is 248-dimensional, this means that the smallest matrices we can use 
+to describe its elements are of size <!-- MATH
+ $248 \times 248$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img113.gif" alt="$248 \times 248$" width="70" height="29" border="0" align="MIDDLE">.  This is a 
+nuisance, but the real problem is that the best way to understand a 
+group is to see it as the group of symmetries of something.  
+In the adjoint representation, we are only seeing <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> as
+symmetries of <i>itself!</i>  It seems to be pulling itself up into
+existence by its own bootstraps.
+
+</p><p>
+Recently some mathematical physicists have been studying a
+construction of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> as the symmetries of a 57-dimensional manifold
+equipped with extra structure [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#GKN">12</a>,<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Larsson">14</a>].  When I heard this,
+the number 57 instantly intrigued me — and not just because Heinz
+advertises 57 varieties of ketchup, either.  No, the real reason was
+that the smallest nontrivial representation of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE">'s little 
+brother <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img114.gif" alt="${\rm E}_7$" width="21" height="30" border="0" align="MIDDLE"> is 56-dimensional.  When you study exceptional Lie 
+algebras, you start noticing that strange numbers can serve as clues 
+to hidden relationships...  and indeed, there is one here.
+
+</p><p>
+One can actually find the numbers 56 and 57 lurking in the geometry of
+the 240 Cayley integers of norm 1.  However, it helps to begin with
+some general facts about graded Lie algebras.  Here I am not referring
+to <!-- MATH
+ ${\mathbb{Z}}/2$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img115.gif" alt="${\mathbb{Z}}/2$" width="30" height="32" border="0" align="MIDDLE">-graded Lie algebras, also known as 
+'Lie superalgebras'.
+Instead, I mean Lie algebras <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img116.gif" alt="${\mathfrak g}$" width="11" height="29" border="0" align="MIDDLE"> that have been written as a direct
+sum of subspaces <!-- MATH
+ ${\mathfrak g}(i)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img117.gif" alt="${\mathfrak g}(i)$" width="29" height="32" border="0" align="MIDDLE">, one for each integer <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img118.gif" alt="$i$" width="9" height="14" border="0" align="BOTTOM">, such that <!-- MATH
+ $[{\mathfrak g}(i),
+{\mathfrak g}(j)] \subseteq {\mathfrak g}(i+j)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img119.gif" alt="$[{\mathfrak g}(i),
+{\mathfrak g}(j)] \subseteq {\mathfrak g}(i+j)$" width="147" height="32" border="0" align="MIDDLE">.  If only the middle 3 of these subspaces
+are nonzero, so that
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathfrak g}= {\mathfrak g}(-1) \oplus {\mathfrak g}(0) \oplus {\mathfrak g}(1)  ,
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img120.gif" alt="\begin{displaymath}{\mathfrak g}= {\mathfrak g}(-1) \oplus {\mathfrak g}(0) \oplus {\mathfrak g}(1) ,\end{displaymath}" width="169" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+we say that <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img116.gif" alt="${\mathfrak g}$" width="11" height="29" border="0" align="MIDDLE"> is '3-graded'.  Similarly, if only the middle 5 are 
+nonzero, so that
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathfrak g}= {\mathfrak g}(-2) \oplus {\mathfrak g}(-1) \oplus {\mathfrak g}(0) \oplus {\mathfrak g}(1) \oplus {\mathfrak g}(2) ,
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img121.gif" alt="\begin{displaymath}{\mathfrak g}= {\mathfrak g}(-2) \oplus {\mathfrak g}(-1) \op...
+...athfrak g}(0) \oplus {\mathfrak g}(1) \oplus {\mathfrak g}(2) ,\end{displaymath}" width="277" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+we say L is '5-graded', and so on.  In these situations, some nice
+things happen [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#GKN">12</a>].  First of all, <!-- MATH
+ ${\mathfrak g}(0)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img122.gif" alt="${\mathfrak g}(0)$" width="31" height="32" border="0" align="MIDDLE"> is
+always a Lie subalgebra of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img116.gif" alt="${\mathfrak g}$" width="11" height="29" border="0" align="MIDDLE">.  Second of all, it acts on each other
+space <!-- MATH
+ ${\mathfrak g}(i)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img117.gif" alt="${\mathfrak g}(i)$" width="29" height="32" border="0" align="MIDDLE"> by means of the bracket.  Third of all, if <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img116.gif" alt="${\mathfrak g}$" width="11" height="29" border="0" align="MIDDLE"> is
+3-graded, we can give <!-- MATH
+ ${\mathfrak g}(1)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img123.gif" alt="${\mathfrak g}(1)$" width="31" height="32" border="0" align="MIDDLE"> a product by picking any element <!-- MATH
+ $k \in
+{\mathfrak g}(-1)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img124.gif" alt="$k \in
+{\mathfrak g}(-1)$" width="72" height="32" border="0" align="MIDDLE"> and defining
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x \circ y = [[x,k],y]  .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img125.gif" alt="\begin{displaymath}x \circ y = [[x,k],y] .\end{displaymath}" width="114" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+This product automatically satisfies the identities defining
+a 'Jordan algebra': 
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x \circ y = y \circ x ,
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img126.gif" alt="\begin{displaymath}x \circ y = y \circ x , \end{displaymath}" width="89" height="27" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x \circ (y \circ (x \circ x)) = (x \circ y) \circ (x \circ x) ,
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img127.gif" alt="\begin{displaymath}x \circ (y \circ (x \circ x)) = (x \circ y) \circ (x \circ x) ,\end{displaymath}" width="235" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+so 3-graded Lie algebras are a great source of Jordan algebras
+[<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#McCrimmon">15</a>].
+
+<p>
+If <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img128.gif" alt="$\k $" width="9" height="15" border="0" align="BOTTOM"> is the Lie algebra of a compact simple Lie group <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img102.gif" alt="$K$" width="18" height="14" border="0" align="BOTTOM">,
+there is a very nice way to look for gradings of its complexification
+<!-- MATH
+ ${\mathfrak g}= {\mathbb{C}}\otimes \k$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img129.gif" alt="${\mathfrak g}= {\mathbb{C}}\otimes \k $" width="69" height="30" border="0" align="MIDDLE">.  This involves some more Lie theory
+— standard stuff that I will only briefly sketch here 
+[<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Adams1">1</a>,<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#FM">10</a>].  Recall that we can pick a maximal torus
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img103.gif" alt="$T$" width="15" height="14" border="0" align="BOTTOM"> for <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img102.gif" alt="$K$" width="18" height="14" border="0" align="BOTTOM">.  The Lie algebra <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM"> of this maximal torus is contained
+in <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img128.gif" alt="$\k $" width="9" height="15" border="0" align="BOTTOM">, and similarly its complexification <!-- MATH
+ ${\mathfrak h}= {\mathbb{C}}\otimes \t$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img130.gif" alt="${\mathfrak h}= {\mathbb{C}}\otimes \t $" width="69" height="30" border="0" align="MIDDLE"> is
+contained in <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img116.gif" alt="${\mathfrak g}$" width="11" height="29" border="0" align="MIDDLE">.  It turns out that <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img116.gif" alt="${\mathfrak g}$" width="11" height="29" border="0" align="MIDDLE"> is the direct sum of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img131.gif" alt="${\mathfrak h}$" width="11" height="30" border="0" align="MIDDLE">
+and a bunch of 1-dimensional complex vector spaces <!-- MATH
+ ${\mathfrak g}_r$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img132.gif" alt="${\mathfrak g}_r$" width="18" height="29" border="0" align="MIDDLE">, one for
+each 'root' <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img14.gif" alt="$r$" width="11" height="13" border="0" align="BOTTOM">.  Roots are certain special vectors in the 'dual
+lattice' <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img133.gif" alt="$L^\ast$" width="21" height="14" border="0" align="BOTTOM">, meaning the lattice of vectors <!-- MATH
+ $\ell \in \t ^\ast$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img134.gif" alt="$\ell \in \t ^\ast$" width="42" height="30" border="0" align="MIDDLE">
+such that <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img135.gif" alt="$\ell(v)$" width="30" height="32" border="0" align="MIDDLE"> is an integer for all <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img136.gif" alt="$v$" width="11" height="13" border="0" align="BOTTOM"> in the original lattice
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img105.gif" alt="$L$" width="14" height="14" border="0" align="BOTTOM">.  It is handy to define <!-- MATH
+ ${\mathfrak g}_0$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img137.gif" alt="${\mathfrak g}_0$" width="18" height="29" border="0" align="MIDDLE"> to be <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img131.gif" alt="${\mathfrak h}$" width="11" height="30" border="0" align="MIDDLE">, so that
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathfrak g}= \bigoplus_{r \in \{{\rm roots}\} \cup \{0\}} {\mathfrak g}_r  .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img138.gif" alt="\begin{displaymath}{\mathfrak g}= \bigoplus_{r \in \{{\rm roots}\} \cup \{0\}} {\mathfrak g}_r .\end{displaymath}" width="134" height="48" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+The great thing about this decomposition is that
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+[{\mathfrak g}_r , {\mathfrak g}_{r'} ] \subseteq {\mathfrak g}_{r + r'}
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img139.gif" alt="\begin{displaymath}[{\mathfrak g}_r , {\mathfrak g}_{r'} ]\subseteq {\mathfrak g}_{r + r'} \end{displaymath}" width="103" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+whenever <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img14.gif" alt="$r$" width="11" height="13" border="0" align="BOTTOM"> and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img140.gif" alt="$r'$" width="15" height="15" border="0" align="BOTTOM"> are either roots or zero.  So, to put a grading
+on <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img116.gif" alt="${\mathfrak g}$" width="11" height="29" border="0" align="MIDDLE">, we just need to slice <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM"> with evenly spaced parallel
+hyperplanes in such a way that each root, as well as the origin, lies
+on one of these hyperplanes.
+
+<p>
+Now let us turn to the case of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE">.  Let us call the complexification 
+of its Lie algebra — what we have been calling <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img116.gif" alt="${\mathfrak g}$" width="11" height="29" border="0" align="MIDDLE"> above — 
+simply <!-- MATH
+ ${\mathfrak e}_8$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img141.gif" alt="${\mathfrak e}_8$" width="17" height="29" border="0" align="MIDDLE">.  In this case <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM"> is the octonions and <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img105.gif" alt="$L$" width="14" height="14" border="0" align="BOTTOM"> is the 
+Cayley integers.  However, it will be simpler to work in a 
+coordinate system where <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img105.gif" alt="$L$" width="14" height="14" border="0" align="BOTTOM"> is the Kirmse integers, since they
+have the same geometry as a lattice, and they are easier to describe.  
+This could be called 'Kirmse's revenge'.  
+
+</p><p>
+If we use the inner product <!-- MATH
+ $\langle x,y \rangle = {\rm Re}(x^\ast y)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img142.gif" alt="$\langle x,y \rangle = {\rm Re}(x^\ast y)$" width="117" height="32" border="0" align="MIDDLE"> on
+the octonions to identify <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM"> with its dual, it turns out that
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img143.gif" alt="$L^\ast = L$" width="53" height="14" border="0" align="BOTTOM">: the lattice of Kirmse integers is self-dual.  Moreover,
+the roots are just the Kirmse integers of norm 1.  Since there are 240
+of these, the dimension of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> is <!-- MATH
+ $240 + \dim({\mathfrak h}) = 248$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img144.gif" alt="$240 + \dim({\mathfrak h}) = 248$" width="139" height="32" border="0" align="MIDDLE">.  To put a
+grading on <!-- MATH
+ ${\mathfrak e}_8$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img141.gif" alt="${\mathfrak e}_8$" width="17" height="29" border="0" align="MIDDLE">, you should imagine these 240 roots as the vertices
+of a gleaming 8-dimensional diamond.  Imagine yourself as a gem
+cutter, turning around this diamond, looking for nice ways to slice
+it.  You need to slice it with evenly spaced parallel hyperplanes
+that go through every vertex, as well as the center of the diamond.
+
+</p><p>
+The easiest way to do this is to let each slice go through all the 
+roots whose real part takes a given value.  This value can be 
+<!-- MATH
+ $1, \frac{1}{2}, 0, -\frac{1}{2},$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img145.gif" alt="$1, \frac{1}{2}, 0, -\frac{1}{2},$" width="77" height="35" border="0" align="MIDDLE"> or <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img146.gif" alt="$-1$" width="23" height="29" border="0" align="MIDDLE">, so we obtain a 5-grading 
+of the Lie algebra <!-- MATH
+ ${\mathfrak e}_8$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img141.gif" alt="${\mathfrak e}_8$" width="17" height="29" border="0" align="MIDDLE">.  We can count the number of roots in each slice:
+
+</p><ul>
+<li>The number of roots with real part 1 is 1.
+</li>
+<li>The number of roots with real part <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img147.gif" alt="$\frac{1}{2}$" width="13" height="35" border="0" align="MIDDLE"> is 56.
+</li>
+<li>The number of roots with real part 0 is 126.
+</li>
+<li>The number of roots with real part <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img148.gif" alt="$-\frac{1}{2}$" width="26" height="35" border="0" align="MIDDLE"> is 56.
+</li>
+<li>The number of roots with real part <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img146.gif" alt="$-1$" width="23" height="29" border="0" align="MIDDLE"> is 1.
+</li>
+</ul>
+The only root with real part 1 is the octonion 1.  Similarly, the only
+root with real part <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img146.gif" alt="$-1$" width="23" height="29" border="0" align="MIDDLE"> is the octonion <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img146.gif" alt="$-1$" width="23" height="29" border="0" align="MIDDLE">.  We get 56 roots with 
+real part <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img147.gif" alt="$\frac{1}{2}$" width="13" height="35" border="0" align="MIDDLE"> by multiplying the number of lines in the Fano 
+plane by the number of sign choices in
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{1}{2}(1 \pm e_i \pm e_j \pm e_k) .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img149.gif" alt="\begin{displaymath}\frac{1}{2}(1 \pm e_i \pm e_j \pm e_k) .\end{displaymath}" width="134" height="38" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+The number of roots with real part <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img148.gif" alt="$-\frac{1}{2}$" width="26" height="35" border="0" align="MIDDLE"> is the same, by
+symmetry.   We get 126 roots with real part 0 by subtracting all the 
+other numbers on the above list from 240.
+
+<p>
+It follows that there is a 5-grading of <!-- MATH
+ ${\mathfrak e}_8$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img141.gif" alt="${\mathfrak e}_8$" width="17" height="29" border="0" align="MIDDLE">:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathfrak e}_8 = 
+ {\mathfrak e}_8(-2) \oplus {\mathfrak e}_8(-1) \oplus {\mathfrak e}_8(0) \oplus {\mathfrak e}_8(1) \oplus {\mathfrak e}_8(2) ,
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img150.gif" alt="\begin{displaymath}{\mathfrak e}_8 =
+{\mathfrak e}_8(-2) \oplus {\mathfrak e}_...
+... e}_8(0) \oplus {\mathfrak e}_8(1) \oplus {\mathfrak e}_8(2) , \end{displaymath}" width="310" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+where the dimensions of the subspaces work as follows:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+248  =   1   +  56   + 134  +  56  + 1  .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img151.gif" alt="\begin{displaymath}248 = 1 + 56 + 134 + 56 + 1 . \end{displaymath}" width="197" height="25" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+Here we must remember to include <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img104.gif" alt="$\t $" width="8" height="14" border="0" align="BOTTOM"> in <!-- MATH
+ ${\mathfrak e}_8(0)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img152.gif" alt="${\mathfrak e}_8(0)$" width="37" height="32" border="0" align="MIDDLE">, 
+obtaining a Lie subalgebra of dimension <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img153.gif" alt="$126 + 8 = 134$" width="99" height="29" border="0" align="MIDDLE">.  
+
+<p>
+This immediately shows how to get <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> to act on a 57-dimensional
+manifold.  Form the group <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE">, and form the subgroup <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img154.gif" alt="$P$" width="15" height="14" border="0" align="BOTTOM"> whose Lie
+algebra is <!-- MATH
+ ${\mathfrak e}_8(-2) \oplus {\mathfrak e}_8(-1) \oplus {\mathfrak e}_8(0)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img155.gif" alt="${\mathfrak e}_8(-2) \oplus {\mathfrak e}_8(-1) \oplus {\mathfrak e}_8(0)$" width="168" height="32" border="0" align="MIDDLE">.  The quotient
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img156.gif" alt="${\rm E}_8/P$" width="41" height="32" border="0" align="MIDDLE"> is a manifold on which <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> acts.  Its tangent spaces all
+look like <!-- MATH
+ ${\mathfrak e}_8(1) \oplus {\mathfrak e}_8(2)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img157.gif" alt="${\mathfrak e}_8(1) \oplus {\mathfrak e}_8(2)$" width="90" height="32" border="0" align="MIDDLE">, so they are 57-dimensional!
+These tangent spaces are <i>complex</i> vector spaces, so we are getting 
+a 57-dimensional complex manifold on which the complexification
+of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> acts, but with some extra work we can get certain 
+`real forms' of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> to act on 57-dimensional real manifolds.
+The options have been catalogued by Kaneyuki [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Kaneyuki">13</a>].
+
+</p><p>
+In the above grading of <!-- MATH
+ ${\mathfrak e}_8$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img141.gif" alt="${\mathfrak e}_8$" width="17" height="29" border="0" align="MIDDLE">, the 134-dimensional Lie algebra 
+<!-- MATH
+ ${\mathfrak e}_8(0)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img152.gif" alt="${\mathfrak e}_8(0)$" width="37" height="32" border="0" align="MIDDLE"> is the direct sum of the Lie algebra <!-- MATH
+ ${\mathfrak e}_7$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img158.gif" alt="${\mathfrak e}_7$" width="17" height="29" border="0" align="MIDDLE"> and the 1-dimensional 
+abelian Lie algebra <!-- MATH
+ ${\mathfrak g} {\mathfrak l}(1)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img159.gif" alt="${\mathfrak g} {\mathfrak l}(1)$" width="36" height="32" border="0" align="MIDDLE">.  This comes as little surprise if one knows  
+that the dimension of <!-- MATH
+ ${\mathfrak e}_7$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img158.gif" alt="${\mathfrak e}_7$" width="17" height="29" border="0" align="MIDDLE"> is 133, but the reason for it is that 
+if we take all the roots of <!-- MATH
+ ${\mathfrak e}_8$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img141.gif" alt="${\mathfrak e}_8$" width="17" height="29" border="0" align="MIDDLE"> that are orthogonal to a given root, 
+we obtain the roots of <!-- MATH
+ ${\mathfrak e}_7$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img158.gif" alt="${\mathfrak e}_7$" width="17" height="29" border="0" align="MIDDLE">.  From this point of view, 
+the 5-grading of <!-- MATH
+ ${\mathfrak e}_8$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img141.gif" alt="${\mathfrak e}_8$" width="17" height="29" border="0" align="MIDDLE"> looks like this:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathfrak e}_8 =
+ {\mathbb{C}}\oplus {\mathbb{F}}\oplus ({\mathfrak e}_7 \oplus {\mathfrak g} {\mathfrak l}(1)) \oplus {\mathbb{F}}\oplus {\mathbb{C}}.
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img160.gif" alt="\begin{displaymath}{\mathfrak e}_8 =
+{\mathbb{C}}\oplus {\mathbb{F}}\oplus ({\m...
+...ak g} {\mathfrak l}(1)) \oplus {\mathbb{F}}\oplus {\mathbb{C}}.\end{displaymath}" width="235" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+Recall that <!-- MATH
+ ${\mathfrak e}_8(0) = {\mathfrak e}_7 \oplus {\mathfrak g} {\mathfrak l}(1)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img161.gif" alt="${\mathfrak e}_8(0) = {\mathfrak e}_7 \oplus {\mathfrak g} {\mathfrak l}(1)$" width="124" height="32" border="0" align="MIDDLE"> acts on all the other
+spaces <!-- MATH
+ ${\mathfrak e}_8(i)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img162.gif" alt="${\mathfrak e}_8(i)$" width="34" height="32" border="0" align="MIDDLE">.  In particular, <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img2.gif" alt="${\mathbb{C}}$" width="15" height="14" border="0" align="BOTTOM"> is the 1-dimensional trivial 
+representation of <!-- MATH
+ ${\mathfrak e}_7 \oplus {\mathfrak g} {\mathfrak l}(1)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img163.gif" alt="${\mathfrak e}_7 \oplus {\mathfrak g} {\mathfrak l}(1)$" width="69" height="32" border="0" align="MIDDLE">, while <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img164.gif" alt="${\mathbb{F}}$" width="13" height="14" border="0" align="BOTTOM"> is the 'Freudenthal 
+algebra': a 56-dimensional representation of <!-- MATH
+ ${\mathfrak e}_7 \oplus {\mathfrak g} {\mathfrak l}(1)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img163.gif" alt="${\mathfrak e}_7 \oplus {\mathfrak g} {\mathfrak l}(1)$" width="69" height="32" border="0" align="MIDDLE">, which 
+happens to be the smallest nontrivial representation of <!-- MATH
+ ${\mathfrak e}_7$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img158.gif" alt="${\mathfrak e}_7$" width="17" height="29" border="0" align="MIDDLE">.  This 
+gadget was Freudenthal's way of trying to understand the group <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img114.gif" alt="${\rm E}_7$" width="21" height="30" border="0" align="MIDDLE">.  
+It has a symplectic structure and ternary product that are invariant under
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img114.gif" alt="${\rm E}_7$" width="21" height="30" border="0" align="MIDDLE">, and he showed that <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img114.gif" alt="${\rm E}_7$" width="21" height="30" border="0" align="MIDDLE"> is precisely the group of
+transformations preserving these structures [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Adams2">2</a>,<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Freudenthal">9</a>].
+It is not clear to me how enlightening this is.  More interesting is
+that these three facts:
+
+<ul>
+<li><img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> is 248-dimensional.
+</li>
+<li><img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img111.gif" alt="${\rm E}_8$" width="21" height="30" border="0" align="MIDDLE"> is the symmetry group of a 57-dimensional manifold equipped
+with extra geometrical structure.
+</li>
+<li><img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img114.gif" alt="${\rm E}_7$" width="21" height="30" border="0" align="MIDDLE"> is the symmetry group of a 56-dimensional vector space
+equipped with extra algebraic structure.
+</li>
+</ul>
+turn out to have a common origin: 
+namely, that when we pack 8-dimensional balls in a lattice
+modelled after the Cayley integers, each ball has 240 nearest
+neighbors, and when we take any one of these neighbors and count
+the number of others that touch it, we find that there are 56!
+
+<p>
+There are many more games to play along these lines.  For example,
+we have just seen that the pure imaginary Kirmse integers of norm
+1 are the roots of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img114.gif" alt="${\rm E}_7$" width="21" height="30" border="0" align="MIDDLE">.  These form the vertices of a gemstone
+in 7 dimensions, and we can repeat our 'gem-cutting' trick to get 
+a 3-grading of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img114.gif" alt="${\rm E}_7$" width="21" height="30" border="0" align="MIDDLE">:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathfrak e}_7 = {\mathfrak e}_7(-1) \oplus {\mathfrak e}_7(0) \oplus {\mathfrak e}_7(1)
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img165.gif" alt="\begin{displaymath}{\mathfrak e}_7 = {\mathfrak e}_7(-1) \oplus {\mathfrak e}_7(0) \oplus {\mathfrak e}_7(1) \end{displaymath}" width="185" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+for which the dimensions work as follows:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+133 = 27 + 79 + 27  .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img166.gif" alt="\begin{displaymath}133 = 27 + 79 + 27 .\end{displaymath}" width="134" height="25" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+Since the dimension of <!-- MATH
+ ${\mathfrak e}_6$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img167.gif" alt="${\mathfrak e}_6$" width="17" height="29" border="0" align="MIDDLE"> is 78, it is not very surprising
+that <!-- MATH
+ ${\mathfrak e}_7(0)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img168.gif" alt="${\mathfrak e}_7(0)$" width="37" height="32" border="0" align="MIDDLE"> is the direct sum of <!-- MATH
+ ${\mathfrak e}_6$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img167.gif" alt="${\mathfrak e}_6$" width="17" height="29" border="0" align="MIDDLE"> and the one-dimensional
+abelian Lie algebra <!-- MATH
+ ${\mathfrak g} {\mathfrak l}(1)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img159.gif" alt="${\mathfrak g} {\mathfrak l}(1)$" width="36" height="32" border="0" align="MIDDLE">.  Since 3-gradings give Jordan algebras,
+it is also not surprising that <!-- MATH
+ ${\mathfrak e}_7(1)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img169.gif" alt="${\mathfrak e}_7(1)$" width="37" height="32" border="0" align="MIDDLE"> is a famous 27-dimensional
+Jordan algebra.  The 'exceptional Jordan algebra' is the space <!-- MATH
+ ${\mathfrak h}_3(\O )$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img170.gif" alt="${\mathfrak h}_3(\O )$" width="43" height="32" border="0" align="MIDDLE">
+of <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img171.gif" alt="$3 \times 3$" width="38" height="29" border="0" align="MIDDLE"> self-adjoint matrices with octonion entries, equipped
+with the product <!-- MATH
+ $a \circ b = \frac{1}{2}(ab + ba)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img172.gif" alt="$a \circ b = \frac{1}{2}(ab + ba)$" width="127" height="35" border="0" align="MIDDLE">.  This
+is a Jordan algebra over the real numbers.  It is 27-dimensional,
+since its elements look like this:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathfrak h}_3(\O ) = 
+\{ \left( \begin{array}{ccc}
+                         \alpha  &  z^*  & y^*    \\
+                         z       & \beta & x      \\
+                         y       & x^*   & \gamma
+\end{array} \right) : \;
+x,y,z \in \O , \; \alpha , \beta, \gamma \in {\mathbb{R}}\} .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img173.gif" alt="\begin{displaymath}
+{\mathfrak h}_3(\O ) =
+\{ \left( \begin{array}{ccc}
+\alph...
+...
+x,y,z \in \O , \; \alpha , \beta, \gamma \in {\mathbb{R}}\} .
+\end{displaymath}" width="372" height="64" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+Its complexification <!-- MATH
+ ${\mathbb{J}}= {\mathbb{C}}\otimes {\mathfrak h}_3(\O )$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img174.gif" alt="${\mathbb{J}}= {\mathbb{C}}\otimes {\mathfrak h}_3(\O )$" width="103" height="32" border="0" align="MIDDLE"> is none other
+than <!-- MATH
+ ${\mathfrak e}_7(1)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img169.gif" alt="${\mathfrak e}_7(1)$" width="37" height="32" border="0" align="MIDDLE">.  The space <!-- MATH
+ ${\mathfrak e}_7(-1)$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img175.gif" alt="${\mathfrak e}_7(-1)$" width="49" height="32" border="0" align="MIDDLE"> is best thought of as the 
+dual of this, so we have:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathfrak e}_7 = {\mathbb{J}}^\ast \oplus ({\mathfrak e}_6 \oplus {\mathfrak g} {\mathfrak l}(1)) \oplus {\mathbb{J}}.
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img176.gif" alt="\begin{displaymath}{\mathfrak e}_7 = {\mathbb{J}}^\ast \oplus ({\mathfrak e}_6 \oplus {\mathfrak g} {\mathfrak l}(1)) \oplus {\mathbb{J}}. \end{displaymath}" width="177" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+Using our facts about graded Lie algebras, this implies that 
+<!-- MATH
+ ${\mathfrak e}_6$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img167.gif" alt="${\mathfrak e}_6$" width="17" height="29" border="0" align="MIDDLE"> acts on <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img177.gif" alt="${\mathbb{J}}$" width="11" height="30" border="0" align="MIDDLE"> and <!-- MATH
+ ${\mathbb{J}}^\ast$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img178.gif" alt="${\mathbb{J}}^\ast$" width="18" height="30" border="0" align="MIDDLE">.  In fact, <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img177.gif" alt="${\mathbb{J}}$" width="11" height="30" border="0" align="MIDDLE"> and its dual
+are the smallest nontrivial representations of <!-- MATH
+ ${\mathfrak e}_6$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img167.gif" alt="${\mathfrak e}_6$" width="17" height="29" border="0" align="MIDDLE">.  
+Furthermore, if we use the above inclusion of <!-- MATH
+ ${\mathfrak e}_6$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img167.gif" alt="${\mathfrak e}_6$" width="17" height="29" border="0" align="MIDDLE"> in <!-- MATH
+ ${\mathfrak e}_7$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img158.gif" alt="${\mathfrak e}_7$" width="17" height="29" border="0" align="MIDDLE">, we can 
+take our previous decomposition of <!-- MATH
+ ${\mathfrak e}_8$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img141.gif" alt="${\mathfrak e}_8$" width="17" height="29" border="0" align="MIDDLE">:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathfrak e}_8 =  
+{\mathbb{C}}\oplus {\mathbb{F}}\oplus ({\mathfrak e}_7 \oplus {\mathfrak g} {\mathfrak l}(1)) \oplus {\mathbb{F}}\oplus {\mathbb{C}}.
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img160.gif" alt="\begin{displaymath}{\mathfrak e}_8 =
+{\mathbb{C}}\oplus {\mathbb{F}}\oplus ({\m...
+...ak g} {\mathfrak l}(1)) \oplus {\mathbb{F}}\oplus {\mathbb{C}}.\end{displaymath}" width="235" height="28" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+and decompose everything in sight as irreducible representations of
+<!-- MATH
+ ${\mathfrak e}_6$
+ -->
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img167.gif" alt="${\mathfrak e}_6$" width="17" height="29" border="0" align="MIDDLE">.  When we do this, the Freudenthal algebra decomposes as
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathbb{F}}= {\mathbb{C}}\oplus {\mathbb{J}}^\ast \oplus {\mathbb{J}}\oplus {\mathbb{C}},
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img179.gif" alt="\begin{displaymath}{\mathbb{F}}= {\mathbb{C}}\oplus {\mathbb{J}}^\ast \oplus {\mathbb{J}}\oplus {\mathbb{C}}, \end{displaymath}" width="139" height="27" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+with the dimensions working as follows:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+56 = 1 + 27 + 27 + 1 .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img180.gif" alt="\begin{displaymath}56 = 1 + 27 + 27 + 1 . \end{displaymath}" width="145" height="25" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+Usually people identify <img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img177.gif" alt="${\mathbb{J}}$" width="11" height="30" border="0" align="MIDDLE"> with its dual here, and use this 
+decomposition to write elements of the Freudenthal algebra as
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img40.gif" alt="$2 \times 2$" width="38" height="29" border="0" align="MIDDLE"> matrices:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathbb{F}}= \{ \left( \begin{array}{cc}
+                         \alpha  & x     \\
+                          y      & \beta \\
+\end{array} \right) : \;
+x,y \in {\mathbb{J}}, \; \alpha , \beta \in {\mathbb{C}}\} .
+\end{displaymath}
+ -->
+
+<img src="On%20Quaternions%20and%20Octonions,%20by%20John%20Conway%20and%20Derek%20Smith_files/img181.gif" alt="\begin{displaymath}{\mathbb{F}}= \{ \left( \begin{array}{cc}
+\alpha &amp; x \\
+y ...
+...;
+x,y \in {\mathbb{J}}, \; \alpha , \beta \in {\mathbb{C}}\} .
+\end{displaymath}" width="264" height="45" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+
+<p>
+This is probably too much 'exceptional mathematics' for most people to
+enjoy, at least on first exposure, so I shall stop here.  The point,
+however, is that the three largest exceptional Lie groups sit inside
+each other like nested Russian dolls, in a pattern determined by the
+geometry of the Cayley integers — or the Kirmse integers, if you
+prefer.  Furthermore, this pattern explains how the smallest
+nontrivial representations of these Lie groups can be built from
+matrices involving octonions.  There is a world of strange beauty to
+be explored here... and Conway and Smith's book provides a lucid and
+elegant introduction.
+
+</p><p>
+Indeed, I should emphasize that Conway and Smith's book is remarkably
+self-contained.  It assumes no knowledge of number theory, string
+theory, Lie theory or lower-case Gothic letters.  It scarcely hints at
+some of the more esoteric delights I have mentioned here.  Indeed, I
+mention these only to show that the quaternions and octonions are part
+of a fascinating and intricate landscape of structures, which can be
+toured at greater length elsewhere [<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#Baez">3</a>,<a href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html#SV">17</a>].  The place to start
+is Conway and Smith.
+
+</p><p>
+</p><h3>
+Acknowledgements
+</h3>
+                                                                                
+<p>
+I would like to thank Bill Dubuque, José Carlos Santos,
+Thomas Larsson, Tony Smith, and Tony Sudbery for help with
+this review.
+                                                                                
+                                                                                
+<br></p><hr>
+<!--Navigation Panel-->
+<b> Next:</b> <a name="tex2html2" href="http://math.ucr.edu/home/baez/octonions/conway_smith/node2.html">Bibliography</a>
+<b> Up:</b> <a href="http://math.ucr.edu/home/baez/octonions/index.html">The Octonions</a>
+<b> Previous:</b> <a href="http://math.ucr.edu/home/baez/octonions/node24.html">Brougham Bridge</a>
+<!--End of Navigation Panel-->
+<p>
+
+<em>
+© 2004  John Baez<br> 
+baez@math.removethis.ucr.andthis.edu <br></em>
+</p><h3><a href="http://math.ucr.edu/home/baez/octonions/README.html">home</a></h3>
+
+
+
+</body></html>
