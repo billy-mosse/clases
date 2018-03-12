@@ -1,0 +1,15 @@
+\frametitle{Demostración}
+
+\small{Sea $E$ tal que no tiene polinomios irreducibles de grado $p$ y sea $L/E$ una extensión algebraica de $E$. Sea $f \in L[X]$ un polinomio de grado $p$ y supongamos que es irreducible. SPG, podemos suponer que $[L:K] < \infty$ porque de última lo cambiamos por K[coef/raíces de $f$]
+Sea $E=L(\alpha)$ con $\alpha$ una raíz de $f$. Luego $[E:L]=p$ y por lo tanto $p$ divide a $[E:K]$. Ahora bien, $E/K$ tiene Galois abeliano, y por el teorema de estructura para grupos abelianos, podemos obtener un subgrupo $H \subset(E/K)$ de índice $p$. Luego $E^H$ es una extensión de grado $p$. Pero esto era imposible, por como era $K$.}
+
+
+
+\begin{center}
+\begin{tikzcd}
+E\arrow[dash]{d}{p} \arrow[dash]{dr}\\
+L\arrow[dash]{d}{n} & E^H \arrow[dash]{dl}{p}\\
+K\arrow[dash]{d}\\
+\F_2\\
+\end{tikzcd}
+\end{center}

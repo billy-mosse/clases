@@ -1,0 +1,53 @@
+El original: http://www.neverendingbooks.org/tag/galois/page/2 Un ordinal es la clausura de F_2??!??!
+-------------
+
+Aparte:
+
+http://www.numericana.com/answer/fields.htm#on2
+https://numbersandshapes.net/2010/10/conways-nimbers/
+
+https://mathoverflow.net/questions/56062/understanding-the-countable-ordinals-up-to-epsilon-0 entendiendo w^w^w
+
+
+https://math.stackexchange.com/questions/627291/easy-visualizations-of-small-countable-ordinals
+
+https://johncarlosbaez.wordpress.com/2016/06/29/large-countable-ordinals-part-1/
+
+
+https://mathoverflow.net/questions/3551/algebraically-closed-fields-of-positive-characteristic/3568?noredirect=1#comment719540_3568 y http://swc.math.arizona.edu/aws/2009/09ConwayNotesPrelim.pdf
+
+¿cuál es la topología?
+
+
+https://sbseminar.wordpress.com/2009/12/07/the-technical-part-of-godels-proof/ una visualización de ordinales con árboles
+
+
+https://math.stackexchange.com/questions/975854/characteristic-3-analogue-of-nimbers On_p
+
+
+http://www.neverendingbooks.org/on2-conways-nim-arithmetics sobre ordinales
+
+
+https://math.stackexchange.com/questions/166804/what-simple-extensions-can-be-naturally-embedded-into-conways-algebraic-closure no entiendo
+
+------
+
+\bar{F_2} => w^w^w??
+
+https://math.stackexchange.com/questions/114978/algebraic-closure-for-mathbbq-or-mathbbf-p-without-choice
+https://math.stackexchange.com/questions/114978/algebraic-closure-for-mathbbq-or-mathbbf-p-without-choice/114984#114984
+
+Conway polynomials:
+
+https://www.sciencedirect.com/science/article/pii/S0747717104000331
+https://en.wikipedia.org/wiki/Conway_polynomial_(finite_fields)
+
+Me parece que puede salir asociando a una sucesión de ordinales una sucesión de polinomios de conway?
+
+Eso tiene sentido? Habría que relacionar primero polinomios de conway con \bar{F_2}
+
+
+p-adic numbers: no.
+
+On the algebraic closure of 2: esto puede re servir. Ver referencias
+

@@ -1,0 +1,29 @@
+Cada ordinal es el conjunto de los ordinales anteriores, y también se puede hacer la inversa:
+
+si tomo un segmento de ordinales (un conjunto sin huecos), eso me da un nuevo ordinal: el menor que es más grande que todos ellos.
+
+Por eso {1,2,3,...} = \omega.
+
+
+........
+
+Para ordinales tenés la operación "sumar 1", y por lo tanto sumar n.
+
+En general podés sumar dos ordinales, y es unir, yuxtaponer los conjuntos, y mirar el orden subyacente.
+
+De igual manera podés multiplicar dos ordinales, es el orden lexicográfico.
+
+En este sentido, sumar y multiplicar ordinales son operaciones parecidas a las de cardinales!
+
+Pero la exponenciación cambia, pues \alpha^\beta, si lo mirás como funciones de \beta en \alpha, no queda claro qué orden dar.
+
+111111111111111111....
+011111111111111111....
+001111111111111111....
+000111111111111111....
+
+es una cadena descendente infinita.
+
+Entonces la exponenciación...se arregla, y se define inductivamente:
+
+\alpha^{\beta+1} etc etc

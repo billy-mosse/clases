@@ -1,0 +1,9 @@
+Leer sobre cuerpos finitos
+
+Estudiarse la demo de unicidad de clausura algebraica!
+
+
+"El sueño del pibe": cómo operar con ordinales!
+Por qué puse esto? Por frobenius?
+
+Claro, los algoritmos funcionan porque asumen que el polinomio se factoriza linealmente en Fq. Así cualquiera.
