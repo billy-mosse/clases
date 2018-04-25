@@ -42,7 +42,7 @@ def downn():
 	return down
 
 def isInverse(node):
-	return node < 0
+	return "-1" in node
 
 
 def LL(i):
@@ -58,79 +58,10 @@ def RR(i):
 	r =R[i]
 	return r
 
-
-
-def graph(s, n):
-	global L
-	global R
-	global down
-	global up
-
-	#print S
-	#print S
-
-	#tambien puedo de a varios
-
-
-	for i in range(1,n+1):
-		plt.plot([3*i], [(n+2)*5], marker='o', markersize=4, color="black")
-	
-
-
-	#C = Counter()
-
-
-	
-	#por ahora no necesito un Center
-	for i in range(1,n+1):
-		L[i] = 3*i-1
-		R[i] = 3*i+1
-		#C[i] = 3*i
-
-
-	px1 = (n+1)
-	px2 = 2*(n+1)
-	height = (n-1)*5
-
-	up = (n+3)*5
-	down = (n+1)*5
-
-	plt.plot([px1], [height], marker='o', markersize=3, color="red")
-	plt.plot([px2], [height], marker='o', markersize=3, color="red")
-
-	
-
-	olds = ""
-	for index,item in enumerate(s):
-		if index == 0:
-			plt.plot((px1,L[1]), (height, down), 'b')
-			plt.plot((L[1],L[1]), (down, up), 'b')
-			plt.plot((L[1],R[1]), (up, up), 'b')
-			olds = item
-		else:
-			runOp(olds,item, plt)
-			olds = item
-			if index == len(s)-1:
-				plt.plot((L[n], L[n]), (up, down), 'b')
-				plt.plot((L[n], px2), (down, height), 'b')
-
-
-	#plt.plot([3,6], [10,10], 'ro')
-	plt.axis([0, 3*(n+1), (-1)*height, 2*height + (n+2)*5 + pow(2,n)])
-
-	img=mpimg.imread('images/monalisa.jpg')
-	#imgplot = plt.imshow(img)
-
-	myaximage = plt.imshow(img, aspect='auto', extent=(n+1,2*(n+1),(-1)*height,height), alpha=0.5, origin='upper', zorder=-1)
-
-	print "Listo."
-
-	plt.show()
-
-	
 #Hice la operacion now antes y ahora quiero hacer la next
 def runOp(now,next, plt):
 
+	print "Procesando %s luego de %s" % (next, now)
 	global up
 	global down
 	global L
@@ -140,8 +71,8 @@ def runOp(now,next, plt):
 	#print "_______"
 	
 	#Ahora estoy a la derecha o izquierda del nodo i_now
-	i_now = abs(int(now))
-	i_next = abs(int(next))
+	i_now = int(now[2])
+	i_next = int(next[2])
 	#assert abs(i_now - i_next) == 1
 
 
@@ -197,6 +128,8 @@ def runOp(now,next, plt):
 	else:
 		#Aca el nodo next esta ANTES que el now
 
+		#next <------ now
+
 		if isInverse(now):
 			#Estoy a la izquierda del NOW
 			if isInverse(next):
@@ -243,69 +176,141 @@ def runOp(now,next, plt):
 				#Y ahora voy para la atras del next
 				plt.plot((L[i_next],RR(i_next)), (up,up),'b')
 
+def inv(s, debug_messages):
+
+	if debug_messages: print "Obteniendo la inversa de %s..." % s
+	temp = ""
+	ret = ""
+	for index,c in enumerate(reversed(s)):
+		#print temp
+		if c != "*":
+			temp = c + temp
+			if "a_" in temp:
+				if "^(-1)" in temp:
+					t = temp[:-5]
+				else:
+					t = temp + "^(-1)"
+				if index == len(s) - 1:
+					ret += t
+				else:
+					ret += t + "*"
+				temp=""
+
+	if debug_messages: print "Es: %s" % ret
+	return ret
 
 
 
 
-
-
-
-
-
-################ Conseguir la formulita ################
-
-#Invierto una formulita que puede ser larga
-def inv(l):
-	inv_l = []
-	for item in reversed(l):
-		inv_l.append(-item)
-
-	return inv_l
-
-
-#Obtengo la solucion para n
-def formula(n):
+def formula(n, debug_messages):
 	if n==2:
-		sol = [1,2,-1,-2]
-		return sol
+		return "a_1*a_2*a_1^(-1)*a_2^(-1)"
 	else:
-		sol = formula(n-1)
-
-		#Calculo la solucion para n a partir de la solucion para n-1
-		ret = sol + [n] + inv(sol) + [-n]
-		return ret
-
-
-################ Conseguir la formulita ################
-
-
-
-
-
-def printlist(sol):
-	str_sol = ""
-	for index, item in enumerate(sol):
-		s = str(item)
-		if index==0:
-			str_sol += "X" + s
-		else:
-			if '-' in s:
-				str_sol += "-X" + s[1:]
-			else:
-				str_sol += "+X%s" % s
-	print str_sol
-
-
+		s = formula(n-1, debug_messages)
+		return s + "*a_%d*" % n + inv(s, debug_messages) + "*a_%d^(-1)" % n
 
 def iteradas(n):
 
 	for i in range(2,n+1):
 		print "Para %s clavos:" % i
-		printlist(formula(i))
+		print formula(i, False)
 		print('\n' * 3)
 		time.sleep(1)
 
 
+
+def graph(s, n):
+	global L
+	global R
+	global down
+	global up
+
+	S = s.split("*")
+	#print S
+	#print S
+
+	#tambien puedo de a varios
+
+
+	for i in range(1,n+1):
+		plt.plot([3*i], [(n+2)*5], marker='o', markersize=3, color="red")
+	
+
+
+	#C = Counter()
+
+
+	
+	#por ahora no necesito un Center
+	for i in range(1,n+1):
+		L[i] = 3*i-1
+		R[i] = 3*i+1
+		#C[i] = 3*i
+
+
+	px1 = (n+1)
+	px2 = 2*(n+1)
+	height = (n-1)*5
+
+	up = (n+3)*5
+	down = (n+1)*5
+
+	plt.plot([px1], [height], marker='o', markersize=3, color="red")
+	plt.plot([px2], [height], marker='o', markersize=3, color="red")
+
+	olds = ""
+	for index,s in enumerate(S):
+		if 1:
+			if index == 0:
+				plt.plot((px1,L[1]), (height, down), 'b')
+				plt.plot((L[1],L[1]), (down, up), 'b')
+				plt.plot((L[1],R[1]), (up, up), 'b')
+				olds = s
+			else:
+				runOp(olds,s, plt)
+				olds = s
+				if index == len(S)-1:
+					plt.plot((L[n], L[n]), (up, down), 'b')
+					plt.plot((L[n], px2), (down, height), 'b')
+
+	'''	plt.plot((px1,L[1]), (height, up), 'b')
+	
+	plt.plot((L[1], R[1]), (up, up), 'b')
+	plt.plot((R[1], L[2]), (up, up), 'b')
+	plt.plot((L[2], R[2]), (up, up), 'b')
+	plt.plot((R[2], R[2]), (up, down), 'b')
+	plt.plot((R[2], L[2]), (down, down), 'b')
+	plt.plot((L[2], R[1]), (down, down), 'b')
+	up = up + eps
+
+	plt.plot((R[1], R[1]), (down, up), 'b')
+	plt.plot((R[1], L[1]), (up, up), 'b')
+	down = down + eps
+
+	#Tal vez me sirva mantener los puntos visitados y si veo que se va a repetir alguno le sumo epsilon a la coordenada y!!
+
+	#funcion que dadas dos coord me devuelva lo que hay que hacer
+	#uso que siempre son "consecutivas" entonces lo que hay que hacer es facil
+
+	down += eps
+	plt.plot((L[1], L[1]), (up, down), 'b')
+	plt.plot((L[1], R[2]), (down, down), 'b')
+	plt.plot((R[2], R[2]), (down, up), 'b')
+	plt.plot((R[2], L[2]), (up, up), 'b')
+	plt.plot((L[2], L[2]), (up, down), 'b')
+	plt.plot((L[2], px2), (down, height), 'b')'''
+
+	#plt.plot([3,6], [10,10], 'ro')
+	plt.axis([0, 3*(n+1), (-1)*height, 2*height + (n+2)*5 + pow(2,n)])
+
+	img=mpimg.imread('images/monalisa.jpg')
+	#imgplot = plt.imshow(img)
+
+	myaximage = plt.imshow(img, aspect='auto', extent=(n+1,2*(n+1),(-1)*height,height), alpha=0.5, origin='upper', zorder=-1)
+
+	print "Listo."
+
+	plt.show()
 
 
 class MyParser(argparse.ArgumentParser):
@@ -334,10 +339,11 @@ def main():
 	if args.iteradas:
 		iteradas(n)
 	else:
-		sol = formula(n)
-		printlist(sol)
+		s = formula(n, False)
+
+		print s
 		if args.graficar:
-			graph(sol, n)
+			graph(s, n)
 
 
 if __name__=="__main__":

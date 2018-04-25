@@ -13,6 +13,7 @@
 \usepackage{tikz}
 \usepackage{coffee4}
 
+\usepackage{dirtytalk}
 
 
 %\author{}
@@ -26,7 +27,7 @@
 \begin{document}
 
 \title{¡Qué colgado!}
-\date{Semana de la Matemática 2017}
+\date{Semana de la Matemática 2018}
 \author{Billy - billy.mosse@gmail.com}
 
 
@@ -127,7 +128,7 @@
 
 	Hay un montón de maneras de colgar un cuadro (¿cuántas hay?)
 	
-	¿Cómo entenderlas y estudiarlas?
+	¿Cómo entenderlas y estudiarlas? ¿Cómo chequear si son solución?
 %	
 %	\begin{figure}%
 %    \centering
@@ -147,7 +148,7 @@
 
 	Hay un montón de maneras de colgar un cuadro (¿cuántas hay?)
 	
-	¿Cómo entenderlas y estudiarlas?
+	¿Cómo entenderlas y estudiarlas? ¿Cómo chequear si son solución?
 
 
 	\Large{¡Poniéndoles nombres a las cosas!}
@@ -196,7 +197,7 @@
 	\includegraphics[scale=0.30]{images/x-1.png}
 
 	%el 1 es demasiado grande
-	En vez de ir de izquierda a derecha por arriba de x, estoy yendo de derecha a izquierda. "Al revés" 	\visible<2->{\color{red} \center{\Huge{$x$}\LARGE$^{-1}$}}
+	En vez de ir de izquierda a derecha por arriba de x, estoy yendo de derecha a izquierda. \say{Al revés} 	\visible<2->{\color{red} \center{\Huge{$-x$}}}
 	
 \end{frame}
 
@@ -205,14 +206,14 @@
 	
 	Estamos pasando por arriba del clavo $x$ y del clavo $y$.
 	
-	\visible<2->{ \center{Nombre de la config: \color{red} \Huge{x $\cdot$ y}}}
+	\visible<2->{ \center{Nombre de la config: \color{red} \Huge{x $+$ y}}}
 	
 
 \end{frame}
 
 \begin{frame}{Curva $\rightarrow$ formulita}
 	
-	\color{red} \center{\Huge{y $\cdot$ x}}
+	\color{red} \center{\Huge{y $+$ x}}
 	
 	\visible<2->{\includegraphics[scale=0.35]{images/yx.png}}
 	
@@ -222,7 +223,7 @@
 
 
 %tengo que decir que es x por x a la menos 1
-\begin{frame}{¿Qué es el 1?}
+\begin{frame}{¿Qué es el 0?}
 \center{\includegraphics[scale=0.21]{images/1.png} }
 	
 \bigskip
@@ -288,7 +289,7 @@
 \begin{frame}{¿Qué queremos? ¿Qué fórmula tiene?}
 
 %TODO por que no sirven
-Ya entendimos que {\color{red}$x$} no sirve, {\color{red}$x^{-1}$} tampoco. {\color{red}$1$} mucho menos.
+Ya entendimos que {\color{red}$x$} no sirve, {\color{red}$-x$} tampoco. {\color{red}$0$} mucho menos.
 
 % Estamos pudiendo representar cosas de la vida real con letras!
 
@@ -299,28 +300,20 @@ Ya entendimos que {\color{red}$x$} no sirve, {\color{red}$x^{-1}$} tampoco. {\co
 
 \begin{frame}{¿Qué significa "sacar un clavo"?}
 
-Supongamos que tenemos el cuadro colgado como {\color{red}$x \cdot y \cdot x$}
+Supongamos que tenemos el cuadro colgado como {\color{red}$x + y + x$}
 
 ¿Qué significa sacar el clavo $y$?
 
 \bigskip
 
-\visible<2->{\center{\Large{¡No les voy a decir la respuesta! Pensemos un toque.}}}
+\visible<2>{\center{\Large{¡No les voy a decir la respuesta! Pensemos un toque.}}}
+
+\visible<3>{\center{\Large{¡Desaparece la letra!}}}
 
 \end{frame}
 
 
-\begin{frame}{¿Qué significa "sacar un clavo"?}
 
-Supongamos que tenemos el cuadro colgado como $x \cdot y \cdot x$
-
-¿Qué significa sacar el clavo $y$?
-
-\bigskip
-
-\center{\Large{¡Desaparece la letra!}}
-
-\end{frame}
 
 
 %TODO poner una mascota chiquita: eso significa ESPERA que sino quemas la respuesta.
@@ -329,9 +322,9 @@ Supongamos que tenemos el cuadro colgado como $x \cdot y \cdot x$
 \begin{frame}{¿Qué queremos?}
 
 ¿Qué queremos?
-\visible<2->{Queremos una fórmula que no sea equivalente a 1 pero cuando saco cualquiera de las dos letras, sí.}
+\visible<2->{Queremos una fórmula que no sea equivalente a 0 pero cuando saco cualquiera de las dos letras, sí.}
 \bigskip
-\visible<3->{Recuerdo: $x \cdot x^{-1} = 1$. Ídem con $y$}
+%\visible<3->{Fíjense: $x -x = 0$. Ídem con $y$}
 
 
 %\visible<3->{¿Cuándo lo queremos?}
@@ -349,7 +342,7 @@ Supongamos que tenemos el cuadro colgado como $x \cdot y \cdot x$
 
 \begin{frame}{Solución}
 
-\center{\scalebox{2.5}{$x \cdot y \cdot x^{-1} \cdot y^{-1}$}}
+\center{\scalebox{2.5}{$x + y - x - y$}}
 
 \bigskip
 
