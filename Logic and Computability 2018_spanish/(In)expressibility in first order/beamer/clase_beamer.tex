@@ -1,0 +1,159 @@
+\documentclass[11pt]{beamer}
+\usetheme{Copenhagen}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{dirtytalk}
+ \usepackage{relsize}
+\uselanguage{spanish}
+\languagepath{spanish}
+\deftranslation[to=spanish]{Theorem}{Teorema}
+\deftranslation[to=spanish]{theorem}{teorema}
+\deftranslation[to=spanish]{Definition}{Definición}
+\deftranslation[to=spanish]{definition}{definición}
+\usepackage{mathtools}
+\author{Guillermo (Billy) Mosse}
+\title{Conjuntos c.e.}
+\setbeamercovered{transparent} 
+\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+\institute{FCEyN, UBA} 
+\date
+%\subject{} 
+
+\def\key#1{\{#1\}}
+\def\N{\mathbb{N}}
+\def\bs{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+
+\usepackage{etoolbox}
+
+\setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!50!bg}
+
+\setbeamercolor{block title exercise}{use=example text,fg=example text.fg,bg=example text.fg!20!bg}
+\setbeamercolor{block body exercise}{parent=normal text,use=block title example,bg=block title example.bg!50!bg}
+
+
+\BeforeBeginEnvironment{exercise}{
+    \setbeamercolor{block title}{fg=black,bg=orange!50!white}
+    \setbeamercolor{block body}{fg=black, bg=orange!30!white}
+}
+\AfterEndEnvironment{exercise}{
+ \setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+ \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!50!bg, fg=black}
+}
+
+\newtheorem{exercise}{Ejercicio}
+\setbeamercovered{transparent}
+\begin{document}
+\setbeamercovered{invisible}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+\begin{frame}{Introducción}
+\begin{definition}
+Se dice que un conjunto $A$ es c.e. si existe una función $g :\N \to \N$ parcial computable tal que:
+$$A = \key{x: g(x) \downarrow } = dom\ g$$
+\end{definition} \pause
+
+\begin{theorem}
+Sea $A \subset \N$. Son equivalentes:
+\begin{itemize}
+	\item $A$ es c.e.
+	\item $A$ es el rango de una función p.r.
+	\item $A$ es el rango de una función computable.
+	\item $A$ es el rango de una función parcial computable.
+\end{itemize}
+\end{theorem} \pause
+
+\begin{exercise}
+	¿Es todo conjunto finito c.e.? ¿Y todo conjunto co-finito?
+\end{exercise}
+
+\end{frame}
+
+\begin{frame}{Una definición más}
+	\begin{definition}
+		Sea $A,B \subset \N$. Se dice que $A \leq B$ si existe una función $f$ \textbf{computable} tal que $\forall\ x \in \N, x \in A$ sii $f(x) \in B$. \\
+		
+		Decimos que $A \equiv B$ si $A\leq B$ y $B \leq A$.
+	\end{definition} \pause
+	
+	\begin{exercise}	
+	Probar que si $A \leq B$, entonces $B$ c.e implica $A$ c.e.
+	\end{exercise} \pause
+
+	\begin{exercise}{(Tarea)}
+	Probar lo mismo, cambiando \say{c.e.} por:
+	\begin{enumerate}
+		\item computable
+		\item co-ce	(co-c.e. es que el complemento sea c.e.)
+	\end{enumerate}
+	\end{exercise}	
+\end{frame}
+
+
+\begin{frame}{Como en la primaria}
+	\begin{exercise}
+	Completar con $\leq, \geq$ ó $\equiv$
+	
+	\begin{equation*}
+	\raisebox{-1pt}{$\N$}\ \raisebox{-2pt}{$\bs$}\ \key{2\cdot n : n \in \N}
+	\end{equation*}\pause
+	
+	\begin{equation*}
+	\raisebox{-1pt}{$K$}\ \raisebox{-2pt}{$\bs$}\ \key{x : \phi_x(x) \downarrow \land \phi_x(x) = 42^{42}}
+	\end{equation*}\pause
+	
+	\begin{equation*}
+	K\ \raisebox{-2pt}{$\bs$}\ TOT\text{ (tarea)}
+	\end{equation*}\pause
+	\end{exercise}
+	
+	¿Siempre se pueden comparar dos conjuntos? ¿Es \textit{total} el orden? \pause
+\end{frame}
+
+\begin{frame}{}
+	(Dejamos de nuevo la definición de $\leq$)
+	
+	\begin{definition}
+		Sea $A,B \subset \N$. Se dice que $A \leq B$ si existe una función $f$ \textbf{computable} tal que $\forall\ x \in \N, x \in A$ sii $f(x) \in B$. \\
+		
+	Decimos que $A \equiv B$ si $A\leq B$ y $B \leq A$.
+	\end{definition}
+	
+	Además teníamos que:
+	
+	\begin{equation*}
+	K\ \leq \key{x : \phi_x(x) \downarrow \land \phi_x(x) = 42^{42}}
+	\end{equation*}
+
+
+	\begin{exercise}
+	Ejercicio 5: sea $A =\key{x : \phi_x(x) \downarrow \land \phi_x(x) = 42^42}$, como arriba.
+	¿Es $A$ c.e.? ¿Es $A$ co-c.e.?
+	\end{exercise}	
+\end{frame}
+
+\begin{frame}{Ping Pong}
+Ejercicio 6. Decidir $V$ ó $F$ y justificar.
+
+\begin{itemize}
+	\item Sea $A$ computable. Entonces existe $f$ tal que $f(A)$ es no computable. \pause
+	\item Sea $\emptyset \neq A$ computable y no vacío. Entonces existe $f$ tal que $f(A)$ es no computable.\pause
+	\item Sea $A$ computable e infinito. Entonces existe $f$ tal que $f(A)$ es no computable.\pause
+	\item Sea $A$ computable e infinito. Entonces existe $f$ computable total tal que $f(A)$ no es computable. \pause
+\end{itemize}
+	
+\end{frame}
+
+\end{document}

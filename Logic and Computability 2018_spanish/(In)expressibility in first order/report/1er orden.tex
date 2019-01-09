@@ -1,0 +1,282 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{dirtytalk}
+ \usepackage{relsize}
+\usepackage{mathtools}
+\author{Guillermo (Billy) Mosse}
+\title{(No) expresabilidad en primer orden}
+
+\usepackage{thmtools}
+\declaretheorem[name=Teorema]{theorem}
+\declaretheorem[name=Lema, sibling=theorem]{lemma}
+\declaretheorem[name=Definici\'on, sibling=theorem]{definition}
+\declaretheorem[name=Chiste, sibling=theorem]{joke}
+\declaretheorem[name=Intento de definici\'on, sibling=theorem]{trydefinition}
+\declaretheorem[name=Proposici\'on, sibling=theorem]{proposition}
+\declaretheorem[name=Observaci\'on, sibling=theorem]{observation}
+\declaretheorem[name=An\'ecdota, sibling=theorem]{anecdote}
+\declaretheorem[name=Corolario, sibling=theorem]{corollary}
+\declaretheorem[name=Ejemplo, style=remark, sibling=theorem]{example}
+\declaretheorem[name=Ejemplos, style=remark, sibling=theorem]{examples}
+\declaretheorem[name=Advertencia, sibling=theorem]{caution}
+\declaretheorem[name=Nota de color, style=remark, sibling=theorem]{remark}
+\def\key#1{\{#1\}}
+\def\N{\mathbb{N}}
+\def\bs{\mathlarger{\mathlarger{\square}}}
+
+\usepackage{enumitem}
+
+\usepackage[pdftex,
+            pdfauthor={Guillermo Mosse},
+            pdftitle={(No) expresabilidad en primer orden},
+            pdfsubject={No expresabilidad, primer orden, Compacidad},
+            pdfkeywords={compacidad, expresabilidad, primer orden, lógica},
+            pdfproducer={Latex with hyperref},
+            pdfcreator={pdflatex}]{hyperref}
+
+\def\l{\mathcal{L}}
+\def\m{\mathcal{M}}
+\def\p{\psi}
+\def\vdd{\vDash}
+\def\vd{\vdash}
+\def\k{\mathcal{K}}
+
+
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Solución]}
+  {\end{proof}}
+  
+\newtheorem{xca}{Ejercicio}
+\addtocounter{xca}{-1}
+
+\begin{document}
+
+
+\title{(No) expresabilidad en primer orden}
+\author{Guillermo Mosse}
+
+%TODO agregar la carátula y hacer que empiece en cero.
+\maketitle
+%\setcounter{page}{1}
+
+En la práctica 6 había varios ejercicios en los que tenían que probar que los elementos de algún modelo eran \emph{distinguibles}, o que una relación era \emph{expresable}, o que una clase de modelos era \emph{definible}. Son tres palabras distintas pero son cosas que se entienden en contexto, y generalmente los ejercicios salían definiendo alguna fórmula $\varphi$ que cumpliera algunas cositas. (Distinguir el elemento, una relación,etc).
+
+La clase de hoy se llama \say{No expresabilidad en primer orden}. Vamos a ver cómo probar que una propiedad \textbf{no} es expresable.
+
+\begin{definition}
+Dado $\l$ un lenguaje de primer orden, decimos que una propiedad es \emph{expresable} si existe una fórmula $\varphi$ tal que:
+
+\begin{equation*}
+\m \vDash \varphi \Leftrightarrow \m \in \k
+\end{equation*}
+\end{definition}
+
+(o sea, $\m$ hace verdadera a $\varphi$ si y solo si $\m$ está en $\k$).
+
+donde $\k$ es la clase de modelos que cumplen dicha propiedad. \bigskip
+
+Un ejemplo de juguete donde la respuesta es afirmativa:
+
+\begin{xca}
+Sea $\l$ un lenguaje de primer orden con igualdad y un símbolo de predicado unario $Q$. Decidir si es expresable la propiedad \say{El predicado unario $Q$ vale para todo elemento del modelo.}
+\end{xca}
+
+\begin{solution}
+Respuesta: sí.
+
+$\varphi = (\forall x) P(x)$.
+\end{solution}
+
+Probar que algo \textbf{no} se puede hacer es bastante distinto a probar que algo se puede hacer. Fíjense que para ver que una propiedad es expresable, hay que encontrar una $\varphi$ que cumpla lo querido. Esto puede ser desafiante y requerir creatividad, claro está. Pero, ¿cómo hace uno para probar que algo no es expresable?
+
+\begin{anecdote}
+Una vez estaba en la Usina del Arte, en una actividad con pibes de primaria, y había un rompecabezas que era imposible de armar. Y yo les preguntaba a los chicxs por qué no les salía. En algún momento les decía que efectivamente era imposible armar el rompecabezas - después de hacerlos sufrir un rato - y les preguntaba por qué creían que era imposible. Los pibes me decían \say{porque intenté muchas veces}.
+
+No sean como esos pibes. A veces nosotros querremos \emph{demostrar } que no existe tal $\varphi$. Para eso, vamos a suponer que existe y llegar a un absurdo.
+\end{anecdote} \bigskip
+
+\begin{xca}Sea $\l$ un lenguaje de primer orden con igualdad y un símbolo de predicado unario $Q$. Decidir si es expresable la propiedad \say{El predicado unario $Q$ solo vale para \emph{finitos} elementos del modelo.}
+\end{xca}
+
+\begin{solution}
+A ver, a ver...supongamos que \emph{es} expresable. ¿Qué pinta tendrá la fórmula $\varphi$? Podemos crearnos las siguientes fórmulas:
+
+\begin{align*}
+\varphi_0 &: \neg (\exists x) Q(x)\\
+\varphi_1 &: \neg \big{(}(\exists x, y) x\neq y \land Q(x) \land Q(y) \big{)}\\
+\varphi_2 &: \neg \big{(}(\exists x,y,z) x\neq y \land x \neq z \land y\neq z \land Q(x) \land Q(y) \land Q(z) \big{)}\\
+&\dots
+\end{align*}
+
+Si logramos crear fórmulas $\varphi_k$ que expresen \say{La propiedad $Q$ solo vale para $k$ elementos distintos}, entonces $\varphi$ tal vez podría ser:
+ $$\varphi_1 \lor \varphi_2 \lor \dots$$
+  o tal vez:
+  $$\underbrace{\varphi_1 \lor \varphi_2 \lor \dots \lor \varphi_k}_{{\exists k}}$$
+  
+  Pero esto es cualquier barrabasada; ninguna de las fórmulas está bien fundada. No vale poner puntos suspensivos (las fórmulas deben ser finitas) ni llavecitas debajo (porque es cualquiera).
+  
+  Tal vez esto nos debería hacer sospechar que la propiedad NO va a ser expresada en primer orden.
+  
+  Ahora bien, de ninguna manera el ejercicio termina acá. Notemos que NO hemos probado que la fórmula $\varphi$ \textbf{debe} ser de la pinta $\varphi_1 \lor \varphi_2 \lor \dots$
+  
+  Tampoco podemos decir \say{intentamos expresarlo y no nos salió, así que no es expresable}. Necesitamos demostrar formalmente que la propiedad no es expresable.
+  
+  Probar que una propiedad sí es expresable requiere solamente dar la fórmula (y probar que sirve, claro está). Probar que no es expresable requiere algo más de trabajo. Hoy vamos a aprender una técnica de demostración que nos va a servir exactamente para esto. Son 4 pasos bien cortitos\footnote{Bueno, no tan cortitos.}:
+  
+  \begin{enumerate}
+  	\item \textbf{Suponemos que la propiedad es expresable.} Sea $\varphi$ la fórmula de primer orden que describe la propiedad.
+  	\item \textbf{Negamos incrementalmente la fórmula $\varphi$}. Creamos fórmulas $\p_1, \p_2, \dots$ que expresen lo siguiente:
+  	\begin{itemize}
+  		\item $\p_1$: \say{Hay un elemento que cumple $Q$.}
+  		\item $\p_2$: \say{Hay dos elementos que cumple $Q$.}
+  		\item $\p_2$: \say{Hay tres elementos que cumple $Q$.}
+  		
+  	\end{itemize}
+  
+  \item Definimos el conjunto $\Gamma = \key{\p_i : i \in \N} \cup \key{\varphi}$. Este conjunto \say{pide} que para cada $i \in \N$, haya $i$ elementos que cumplan $Q$, ¡pero además, como $\varphi$ pertenece al conjunto, pide que sólo finitos cumplan la propiedad!
+  
+  	Notemos que cada $\p_i$ está negando a $\varphi_i$ (del comienzo de la resolución). Si a $\varphi$ la pensamos como $\varphi_1 \lor \varphi_2 \lor \dots$, la negación incremental consiste en meter en $\Gamma$ a las fórmulas $\neg \varphi_1, \neg \varphi_2, \dots$
+  
+  \item 
+	\begin{enumerate}[label=\alph*)]
+		\item Probamos que $\Gamma$ es insatisfacible (eso sale solo, por la definición del conjunto).
+		\item Probamos, usando Compacidad, que $\Gamma$ es satisfacible, para llegar a un absurdo. El absurdo provino de asumir que la propiedad era expresable.
+	\end{enumerate}  
+\end{enumerate}
+
+Entonces, ahora en detalle:
+
+\begin{enumerate}
+	\item \textbf{Suponemos que la propiedad es expresable.} Sea $\varphi$ la fórmula de primer orden que describe la propiedad.
+  	\item \textbf{Negamos incrementalmente la fórmula $\varphi$}. Creamos fórmulas $\p_1, \p_2, \dots$ que expresen lo siguiente:
+  	
+  Hay que definir las $\p_i$, y para eso podemos usar una función todosDistintos$_k(x_1,\dots,x_k)$ por cada $k\in \N$:
+
+\begin{align*}
+todosDistintos_k(x_1,\dots,x_k) := &x_1 \neq  x_2 \land \dots \land x_1 \neq x_k \land\\
+&x_2 \neq x_3 \land \dots x_2 \neq x_k \land\\
+&\land \dots \land\\
+&x_{k-1} \neq x_k
+\end{align*}
+
+(Para pensar: ¿por qué está \textbf{bien} poner puntos suspensivos en la definición de $todosDistintos_k$?)
+
+%\say{¿Alguien me puede decir por qué está bien poner puntos suspensivos en la definición de todosDistintos?} \bigskip
+
+\begin{itemize}
+	\item $\p_1: (\exists x_1) Q(x)$
+	\item $\p_2: (\exists x_1, x_2)\ todosDistintos_2(x_1,x_2) Q(x_1) \land Q(x_2)$
+	\item \dots
+	\item $\p_n : (\exists x_1,\dots,x_n)\ todosDistintos_n(x_1,\dots,x_n) \land P(x_1) \land \dots \land P(x_n)$
+	\item $\dots$
+\end{itemize}
+
+
+  \item 
+  \begin{enumerate}[label=\alph*)]
+  	\item Veamos que $\Gamma$ es insatisfacible.\footnote{Esto debería ser fácil, pues $\Gamma$ \say{pide} que solo \emph{finitos} elementos cumplan $Q$, pero también \emph{infinitos}. Y esto es ridículo, casi diríamos que...\emph{absurdo}.} Probemos esto por el absurdo.
+  	 \textbf{Supongamos} que existe un modelo $\m$ y una valuación $v$ tal que $\m \vDash \Gamma[v]$. Como $\m$ satisface a todas las fórmulas de $\Gamma$, en particular satisface a $\varphi$. Luego $Q$ vale sólo para finitos elementos del modelo. Sea $k\in \N$ tal que $Q$ solo vale para ciertos elementos $e_1,\dots,e_k$. Es decir, para todo $e \in M, e \neq e_1,\dots, e_k$, no vale $Q(e)$.  	
+  	
+  	 Pero también tenemos que $\p_{k+1} \in \Gamma$; luego existen $\hat{e_1},\dots,\hat{e_n}\in M$, todos los elementos distintos entre sí, tal que vale $Q(\hat{e_1}),\dots, Q(\hat{e_{k+1}})$. Esto es \textbf{absurdo}\footnote{Si quieren, por el principio del palomar.}, con lo que $\Gamma$ es insatisfacible.
+  	 
+  	 ¿Terminó el ejercicio? Para nada. Lo único que probamos es que $\Gamma$ es insatisfacible.
+  	 
+  	 \item Veamos que $\Gamma$ es satisfacible. Por el teorema de compacidad vale que si todo $\Gamma_0 \subseteq \Gamma$, con $\Gamma_0$ finito, $\Gamma_0$ es satisfacible, entonces vale que $\Gamma$ es satisfacible.
+  	 
+  	 Sea $\Gamma_0 \subseteq \Gamma$ un subconjunto finito.
+  	  Definimos $r := \max\big{(}\key{i : \p_i \in \Gamma_0} \cup \key{1}\big{)} < \infty$. Agregamos $\key{1}$ porque $\Gamma_0$ podría no tener a ninguna fórmula $\p_i$, y el conjunto al que le tomamos máximo debe ser no vacío.
+  	  
+  	  Definimos el siguiente modelo $\mathcal{M}$:
+  	  
+  	  Como dominio tomamos $M = \N$, y como relación $Q$, $Q^{\mathcal{M}}(n) = n \leq r$. En primer lugar notemos que si $\varphi \in \Gamma_0$, entonces $\varphi$ es verdadera, porque $Q$ solamente vale para $1,\dots,r$, que son finitos.
+  	  
+  	  Si existe $\p_n \in \Gamma_0$, tenemos que ver que existen $e_1,\dots,e_n \in M$, todos distintos, tal que vale $Q(e_1),\dots,Q(e_n)$. Tomando, para cada $1\leq i \leq n, e_i = i$, obtenemos lo deseado.
+  	  
+  Como $\Gamma_0$ es satisfacible, y $\Gamma_0$ era un subconjunto finito arbitrario de $\Gamma$, entonces, por compacidad, tenemos que $\Gamma$ es satisfacible.
+  \end{enumerate}
+  
+  Hemos demostrado que $\Gamma$ es insatisfacible y satisfacible, lo cual es un absurdo. El absurdo, como dijimos antes, provino de suponer que existía tal $\varphi$. Luego la propiedad no es expresable en primer orden.\footnote{Así que no nos gastemos en intentar expresarla.}
+\end{enumerate}
+
+Con esto terminamos el ejercicio.
+\end{solution}
+
+
+
+\begin{xca}Sea $\l$ un lenguaje de primer orden con igualdad y símbolo de predicado unario $Q$. Decidir si es expresable la propiedad \say{El predicado unario $Q$ vale para \emph{infinitos} elementos del modelo.}
+\end{xca}
+
+\begin{solution}
+Notemos que acá negar incrementalmente la condición \say{Valer para infinitos} está difícil. Tendríamos que crear infinitas fórmulas tal que la conjunción de todas fuerce a que el predicado valga solamente para \emph{finitos}.
+
+Lo que sí podemos hacer es reducirla al Ejercicio 1. Supongamos que la propiedad fuera expresable vía una fórmula $\psi$. Entonces definiendo $\varphi = \neg \psi$ podríamos expresar (¡convencerse!) la negación de la propiedad, i.e., \say{El predicado unario $Q$ solo vale para \emph{finitos} elementos del modelo}, lo cual es un absurdo ya que vimos que una propiedad así no era expresable en el Ejercicio 1.
+\end{solution}
+
+
+\begin{xca}
+Sea $\l$ un lenguaje de primer orden con igualdad y un símbolo de predicado $R$. Decidir si es expresable la propiedad \say{$R$ \textbf{no} vale solamente para finitos elementos del modelo.}.
+\end{xca}
+\begin{solution}
+Supongamos que la propiedad fuera expresable, y definamos a $Q$ como $\neg R$. La propiedad \say{$R$ \text{no} vale solamente para finitos elementos del modelo} es equivalente a \say{$Q$ vale solamente para finitos elementos del modelo}. Hemos llegado a un absurdo, ya que en el Ejercicio 1, con $Q$ arbitrario, habíamos probado que esta propiedad no era expresable.
+\end{solution}
+
+\begin{xca}
+Sea $\l$ un lenguaje de primer orden con igualdad\footnote{Para variar.} e infinitos símbolos de constante $c_1,c_2,\dots$ indexados por $\N$. ¿Es expresable la propiedad \say{$\m$ le asigna a cada constante un valor distinto}?
+\end{xca}
+\begin{solution}
+Negar incrementalmente esto está difícil. Sin embargo, si esta propiedad fuera expresable entonces también sería expresable su negación, i.e., \say{$\m$ le asigna a dos constantes el mismo valor}
+
+Lleguemos a un absurdo con \emph{esa} propiedad.
+
+\begin{enumerate}
+	\item Negamos incrementalmente la propiedad. Para cada $k\geq 2$, definimos:
+
+	$\psi_k : \neg todosDistintos(c_1,\dots,c_k)$ 
+	
+	\item Definimos $\Gamma = \key{\psi_i : i \in \N} \cup \key{\varphi}$
+	
+	\item Ver que el conjunto $\Gamma$ es insatisfacible queda de ejercicio.
+	
+	\item Para ver que es satisfacible, por compacidad basta ver que todo subconjunto finito $\Gamma_0 \subseteq \Gamma$ es satisfacible. Sea $\Gamma_0$ un subconjunto finito y arbitrario de $\Gamma$.
+	Nuevamente definimos $r = \max\key{i : \psi_i \in \Gamma_0} \cup \key{1}< \infty$.
+	
+	Podemos dar un modelo $\m$ con dominio los naturales, y:
+	
+	 $c_i^\m = \begin{cases}i &\text{ si }i \leq r
+	 \\42 &\text{ si }i > r\end{cases}$
+	 
+	 Como antes, en primer lugar notemos que si $\varphi \in \Gamma_0$, entonces $\varphi$ es verdadera, porque $c_{r+1}^\m = c_{r+2}^\m$.
+  	  
+  	  Si existe $\p_n \in \Gamma_0$, tenemos que ver que existen $e_1,\dots,e_n \in M$, todos distintos, tal que vale $Q(e_1),\dots,Q(e_n)$. Tomando, para cada $1\leq i \leq n, e_i = i$, tenemos lo deseado.
+  	  
+  Como $\Gamma_0$ es satisfacible, y $\Gamma_0$ era un subconjunto finito arbitrario de $\Gamma$, entonces, por compacidad, tenemos que $\Gamma$ es satisfacible.
+
+\end{enumerate}
+
+Al demostrar que $\Gamma$ es tanto satisfacible como insatisfacible, hemos llegado a un absurdo. El absurdo provino de suponer que \say{$\m$ le asigna a cada constante un valor distinto} era una propiedad expresable en primer orden.
+\end{solution}
+
+Últimos comentarios: la resolución de este tipo de ejercicios es bastante metódica. Sin embargo, requieren algo creatividad:
+
+\begin{itemize}
+	\item ¿Será expresable la propiedad? ¡A veces sí, ojo! Ver, por ejemplo, el ejercicio 3b de este parcial \url{goo.gl/Jg9ePa}.
+	\item Además, si la propiedad \emph{no} es expresable, ¿con qué trabajar? ¿Con ella, como el ejercicio 1, o con su negación, como en el ejercicio 4?
+	\item Si uno hace la negación incremental mal se puede encontrar con que el conjunto $\Gamma$ no es satisfacible.
+	\item ¡Para dar el modelo hay que pensar un poco!
+\end{itemize}
+
+Hagan los ejercicios de la práctica para agarrarle la mano.
+
+\end{document}
